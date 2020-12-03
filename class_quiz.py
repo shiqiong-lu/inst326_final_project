@@ -34,7 +34,8 @@ class quiz_results：
         self.storm_inten = storm_inten
         self.storm_loc = storm_loc
 
-    def present_question_user_choices(): # coded by Ann Hoang
+    # coded by Ann Hoang    
+    def present_question_user_choices():
     '''Display questions and choices, record answers from user
     
     Args:
