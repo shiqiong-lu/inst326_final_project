@@ -1,4 +1,6 @@
-def retry_it(): # coded by Ann Hoang
+# coded by Ann Hoang
+
+def retry_it():
     '''Yes or no option to allow the user to retake the quiz
     
     Args:
