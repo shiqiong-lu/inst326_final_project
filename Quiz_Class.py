@@ -18,8 +18,10 @@ class quiz_results：
     * total_summary(): combination result of all factor results from quiz
 
     '''
-
-    def present_question_user_choices(): # coded by Ann Hoang
+    
+    # coded by Ann Hoang
+    
+    def present_question_user_choices():
     '''Display questions and choices, record answers from user
     
     Args:
@@ -88,7 +90,7 @@ class quiz_results：
 
 
 
-    
+    #Alisson Fortis Sanchez    
 
     def field_result(self, field):
         
