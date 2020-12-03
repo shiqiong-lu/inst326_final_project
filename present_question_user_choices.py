@@ -47,7 +47,7 @@ def present_question_user_choices():
     ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
     horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
     horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
-    flowers = int(input('Think of flowers. Are there (1) few or (2) many? '))
+    flowers = int(input('Think of flowers. Are there (1) few or are they (2) everywhere? '))
     weather = int(input('Think of what the weather in the field is like. Is there (1) rain, (2) fog, (3) wind, or (4) sun? '))
     storm_inten = int(input('Think of a storm. Is it (1) mild or (2) strong? '))
     storm_loc = int(input('Is the storm (1) in the background or (2) right above the cube? '))
