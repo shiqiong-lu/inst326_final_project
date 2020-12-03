@@ -34,7 +34,8 @@ class quiz_results：
         self.storm_inten = storm_inten
         self.storm_loc = storm_loc
 
-    # coded by Ann Hoang    
+    # coded by Ann Hoang
+    
     def present_question_user_choices():
     '''Display questions and choices, record answers from user
     
@@ -104,8 +105,8 @@ class quiz_results：
 
 
 
+    #Alisson Fortis Sanchez
     
-
     def field_result(self, field):
         
         field_representation = "The field represents your mind. Its size is the representation of your knowledge of the world, and how vast your personality is."
