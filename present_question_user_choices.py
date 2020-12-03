@@ -1,4 +1,6 @@
-def present_question_user_choices(): # coded by Ann Hoang
+# coded by Ann Hoang
+
+def present_question_user_choices():
     '''Display questions and choices, record answers from user
     
     Args:
