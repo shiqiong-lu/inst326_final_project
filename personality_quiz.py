@@ -445,9 +445,6 @@ class Createquiz:
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
     It aslo allow the user to buid their own fun quiz.
-       Args:
-       
-       Returns:
        
        
        Side effects:
