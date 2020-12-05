@@ -1,5 +1,8 @@
 #Alisson Fortis Sanchez
 #Shiqiong Lu and Hung
+
+import csv
+
 def get_user_info():
     user_id=input("Please enter your name: ")
     return user_id
@@ -44,7 +47,7 @@ def presentquestions_getchoices():
     field = int(input('Think of an open field. Is it (1) dry and dead, (2) grassy and healthy, or (3) well-trimmed? '))
     cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
     cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
-    cube_other = int(input('Is the cube (1) transparent, (2) made out of water/ice, (3) hollow, or (4) made out of metal/rock? '))
+    #cube_other = int(input('Is the cube (1) transparent, (2) made out of water/ice, (3) hollow, or (4) made out of metal/rock? '))
     ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
     ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
     ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
@@ -57,7 +60,7 @@ def presentquestions_getchoices():
     storm_loc = int(input('Is the storm (1) in the background or (2) right above the cube? '))
     
     return (field,cube_texture,
-            cube_color,cube_other,
+            cube_color,
             ladder_length,ladder_dist,
             ladder_dist_cube,ladder_mat,
             horse_act,horse_col,flowers,weather,
@@ -79,11 +82,10 @@ class Quiz_results:
     * total_summary(): combination result of all factor results from quiz
 
     '''
-    def __init__(self, field, cube_texture,cube_color, cube_other, ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
+    def __init__(self, field, cube_texture,cube_color,ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
         self.field = field
         self.cube_texture  = cube_texture
         self.cube_color = cube_color
-        self.cube_other = cube_other
         self.ladder_length = ladder_length
         self.ladder_dist = ladder_dist
         self.ladder_dist_cube = ladder_dist_cube
@@ -384,64 +386,42 @@ def user_feedback(user_response):
     if user_response == "3":
         print ("We are sorry your results were not accurate!")
 
-class Createquiz:
-    """This class will allow user create their own quiz
-    Attributes:
-      questions(list):
-      
-    """
-    def __init__(self):
-        """ Initialize new Player object.
+def get_length(file_path):
+    # with open("quizdata.csv","r") as csvfile:
+    #     reader=csv.reader(csvfile)
+    #     reader_list=list(reader)
+        return 1
 
-            Side effects:
-                Sets attributes questions, answers,userkey,question_answer.
-        """
-        self.questions=[]
-        self.answers=[]
-        self.userkey=[]
-        self.question_answer={}
-           
-    
-        # fh = open ('quizdata.csv','w')
-        # spreadsheet=csv.writer(fh)# create the csv handle
-        # spreadsheet.writerow(["question","answer"])
-    
-    def get_question_answer(self,user_id):
-        
-        
-      
-            
-        user_question=str(input("""Please built your question, hit "Enter" key to quit\n"""))
-        self.questions.append(user_question)
-        user_answer=str(input("""Please enter the answer for your question,hit "Enter" key to quit\n"""))
-        self.answers.append(user_answer)
-        while (user_question!=""or user_answer!=""):
-            user_question=str(input("""Please built your question, hit "Enter" key to quit\n"""))
-            self.questions.append(user_question)
-            user_answer=str(input("""Please enter the answer for your question,hit "Enter" key to quit\n"""))
-            self.answers.append(user_answer)
-            # except ValueError:
-            #     print("input must be a string")
-        #print(self.questions,self.answers)
-        for index in self.questions:
-            if self.questions=="":
-                continue
-            else:
-                self.userkey.append((user_id,index))
-        #print(self.userkey)
-        
-        self.question_answer=dict(zip(self.userkey,self.answers))
-        #print(self.question_answer)
-        return self.question_answer
-    
-    def display_addquiz(self):
-        print("Here are the questions and answers you built for your own quiz:")
-        k=1
-        for key,value in self.question_answer.items():
-           
-            print(f"Question:{k}. {key[1]} Answer: {value}")
-            k+=1
-
+def append_data(file_path,name,field,cube_texture,
+            cube_color,
+            ladder_length,ladder_dist,
+            ladder_dist_cube,ladder_mat,
+            horse_act,horse_col,flowers,weather,
+            storm_inten,storm_loc):
+    fieldnames=['id','name','field','cube texture',
+                'cube color','ladder length','ladder distance',
+                'ladder cube distance','ladder material','horse action',
+                'horse color','flowers','weather','storm magnitude','storm location']
+    next_id=get_length(file_path)
+    with open(file_path,"a") as csvfile:
+        writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow({"id":next_id,
+                          "name":name,
+                          "field":field,
+                          "cube texture":cube_texture,
+                          "cube color":cube_color,
+                          "ladder length":ladder_length,
+                          "ladder distance":ladder_dist,
+                          "ladder cube distance":ladder_dist_cube,
+                          "ladder material":ladder_mat,
+                          "horse action":horse_act,
+                          "horse color":horse_col,
+                          "flowers":flowers,
+                          "weather":weather,
+                          "storm magnitude":storm_inten,
+                          "storm location":storm_loc,
+                          })
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
     It aslo allow the user to buid their own fun quiz.
@@ -461,20 +441,27 @@ def main():
     personalityquiz=presentquestions_getchoices()
     print("Your input are",personalityquiz)
     (input_field,input_cube_texture,
-            input_cube_color,input_cube_other,
+            input_cube_color,
             input_ladder_length,input_ladder_dist,
             input_ladder_dist_cube,input_ladder_mat,
             input_horse_act,input_horse_col,input_flowers,input_weather,
             input_storm_inten,input_storm_loc)=personalityquiz
-    
-    personalityresult=Quiz_results(input_field,input_cube_texture,
-            input_cube_color,input_cube_other,
+    #write the user response into the database
+    append_data("quizdata.csv",myid,input_field,input_cube_texture,
+            input_cube_color,
             input_ladder_length,input_ladder_dist,
             input_ladder_dist_cube,input_ladder_mat,
             input_horse_act,input_horse_col,input_flowers,input_weather,
             input_storm_inten,input_storm_loc)
     
+    personalityresult=Quiz_results(input_field,input_cube_texture,
+            input_cube_color,input_ladder_length,input_ladder_dist,
+            input_ladder_dist_cube,input_ladder_mat,
+            input_horse_act,input_horse_col,input_flowers,input_weather,
+            input_storm_inten,input_storm_loc)
+    
     print(f"You choose field, {personalityresult.field_result()}\n")
+    
     print(f"You choose cube texure, {personalityresult.cube_texture_result()}\n")
     print(f"You choose cube color, {personalityresult.cube_color_result()}\n")
     
@@ -488,21 +475,12 @@ def main():
 
     print(f"You choose flower, {personalityresult.flower_result()}\n")
     print(f"You choose weather, {personalityresult.weather_result()}\n")
+    
     print(f"You choose storm magnitude, {personalityresult.storm_magnitude_result()}\n")
     print(f"You choose storm location, {personalityresult.storm_location_result()}\n")
     
     user_feedbackinput= input("Please enter whether you thougt this test was: (1) accurate, (2) moderately accurate, or (3) not accurate at all")
     user_feedback(user_feedbackinput)
-    
-    myquiz=Createquiz()
-    user_choice=input("Would you like to build a fun quiz to share with others? yes/no")
-    user_choice.capitalize()
-    
-    if user_choice=="YES":
-        myquiz.get_question_answer(myid)
-        myquiz.display_addquiz()
-   
-    
     
 if __name__=="__main__":
     main()
