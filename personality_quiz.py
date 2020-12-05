@@ -1,7 +1,12 @@
 #Alisson Fortis Sanchez
 #Shiqiong Lu and Hung
 def get_user_info():
+    """This function will ask user's name.
+    Returns:
+       user_id(str): the name of the user.
+    """
     user_id=input("Please enter your name: ")
+    
     return user_id
 
 def presentquestions_getchoices():
@@ -387,7 +392,10 @@ def user_feedback(user_response):
 class Createquiz:
     """This class will allow user create their own quiz
     Attributes:
-      questions(list):
+      questions(list): questions the user build
+      answers(list): answers the user build
+      userkey(list):tuple of the user_id, name of the user, and questions
+      question_answer(dictionary):userkey(list) which contains user_id and question as a tuple, answer for as the key
       
     """
     def __init__(self):
@@ -407,6 +415,15 @@ class Createquiz:
         # spreadsheet.writerow(["question","answer"])
     
     def get_question_answer(self,user_id):
+        """This method will allow the user to built in questions with answers
+        Args:
+           user_id(str):name of the user
+        Returns:
+           self.question_answer(dic{(str:str):str}): user_id and question as a tuple, answer for as the key
+        Side effects:
+           change the user_id
+        
+        """
         
         
       
@@ -435,12 +452,17 @@ class Createquiz:
         return self.question_answer
     
     def display_addquiz(self):
+        """This methods will display the quiz the user created to them
+        Side effects:
+            output the key and value of the dictionary self.question_answer
+        """
         print("Here are the questions and answers you built for your own quiz:")
         k=1
         for key,value in self.question_answer.items():
            
             print(f"Question:{k}. {key[1]} Answer: {value}")
             k+=1
+        
 
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
@@ -448,11 +470,12 @@ def main():
        
        
        Side effects:
+       output personality quiz information to the user for the corresponding choice they made.
        
     """
     myid=get_user_info()
     print("Welcome to the Remeo Antolin Cube Personality Test\n")
-    print(" It's important that you describe whatever comes to your mind first for each question.\n")
+    print("It's important that you describe whatever comes to your mind first for each question.\n")
     print("I also recommend writing your answers down so that it's easier to figure out your results at the end\n")
     print("and harder to waffle about your answers or change them for a result that you prefer!\n")
     personalityquiz=presentquestions_getchoices()
@@ -493,9 +516,9 @@ def main():
     
     myquiz=Createquiz()
     user_choice=input("Would you like to build a fun quiz to share with others? yes/no")
-    user_choice.capitalize()
+    user_validation=user_choice.upper()
     
-    if user_choice=="YES":
+    if user_validation=="YES":
         myquiz.get_question_answer(myid)
         myquiz.display_addquiz()
    
