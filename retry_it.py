@@ -13,7 +13,7 @@ def retry_it():
         try:
             re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
             if re_answer == 1:
-                present_question_user_choices()
+                main()
             elif re_answer == 2:
                 return exit()
             else:
