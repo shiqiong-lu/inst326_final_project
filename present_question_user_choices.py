@@ -145,7 +145,7 @@ def present_question_user_choices():
     
     while True:
         try:
-            flowers = int(input('Think of flowers. Are there (1) few or (2) many? '))
+            flowers = int(input('Think of flowers. Are there (1) few or are they (2) everywhere? '))
             if flowers in range(1, 2):
                 break
             else:
