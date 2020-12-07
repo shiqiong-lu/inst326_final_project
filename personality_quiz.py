@@ -402,13 +402,13 @@ def user_feedback(user_response):
     if user_response == "3":
         print ("We are sorry your results were not accurate!")
 
-def get_length(file_path):
+def getfile_len(file_path):
     with open("quizdata.csv","r") as csvfile:
         reader=csv.reader(csvfile)
-        reader_list=list(reader)
-        return len(reader_list)
+        reader_len=list(reader)
+        return len(reader_len)
 
-def record_data(file_path,name,field,cube_texture,
+def record_data(path,name,field,cube_texture,
             cube_color,ladder_length,ladder_dist,ladder_dist_cube,ladder_mat,
             horse_act,horse_col,flowers,weather, storm_inten,storm_loc,user_feedback):
     #unpack field user input value to string
@@ -525,8 +525,8 @@ def record_data(file_path,name,field,cube_texture,
                 'cube color','ladder length','ladder distance',
                 'ladder cube distance','ladder material','horse action',
                 'horse color','flowers','weather','storm magnitude','storm location','user feedback']
-    next_id=get_length(file_path)
-    with open(file_path,"a") as csvfile:
+    next_id=getfile_len(path)
+    with open(path,"a") as csvfile:
         writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
         #writer.writeheader()
         writer.writerow({"id":next_id,
