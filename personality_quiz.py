@@ -4,11 +4,20 @@
 #Shiqiong Lu
 #Ann huang
 #Hung Nuyen
+#Alisson Fortis Sanchez
+#Shiqiong Lu and Hung
+# The code for changing pages was derived from: http://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
+# License: http://creativecommons.org/licenses/by-sa/3.0/	
+#Shiqiong Lu added codes for INST 326 Project GUI
 
 import csv
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
+import tkinter as tk
+from PIL import ImageTk, Image
+
+LARGE_FONT= ("Verdana", 18)
 
 def get_user_info():
     user_id=input("Please enter your name: ")
@@ -463,8 +472,10 @@ def record_data(file_path,name,field,cube_texture,
     horse_actdict={'horse_act':['playing','running','sleeping/grazing']}
     if horse_act==1:
         horse_actw=horse_actdict['horse_act'][0]
-    else:
+    elif horse_act==2:
         horse_actw=horse_actdict['horse_act'][1]
+    else:
+        horse_actw=horse_actdict['horse_act'][2]
         
     horse_coldict={'horse_col':['brown','black','white']}
     if horse_col==1:
@@ -541,47 +552,511 @@ def user_datagraph():
     #print(df)
     sns.catplot(y='field',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Field choices',fontsize=15)
+    plt.savefig("field")
     
     sns.catplot(y='cube texture',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube texture choices',fontsize=15)
+    plt.savefig("cube_texture")
     
     sns.catplot(y='cube color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube color choices',fontsize=15)
+    plt.savefig("cube_color")
     
     sns.catplot(y='ladder length',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder length choices',fontsize=15)
+    plt.savefig("ladder_length")
     
     sns.catplot(y='ladder distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder distance choices',fontsize=15)
+    plt.savefig("ladder_distance")
     
     sns.catplot(y='ladder cube distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder cube distance',fontsize=15)
+    plt.savefig("ladder_cube_distance")
     
     sns.catplot(y='ladder material',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder material choices',fontsize=15)
+    plt.savefig("ladder_material")
     
     sns.catplot(y='horse action',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse action choices',fontsize=15)
+    plt.savefig("horse_action")
     
     sns.catplot(y='horse color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse color choices',fontsize=15)
+    plt.savefig("horse_color")
     
     sns.catplot(y='flowers',kind='count',palette="ch:.25",data=df)
     plt.ylabel('flowers choices',fontsize=15)
+    plt.savefig("flowers")
     
     sns.catplot(y='weather',kind='count',palette="ch:.25",data=df)
     plt.ylabel('weather choices',fontsize=15)
+    plt.savefig("weather")
     
     sns.catplot(y='storm magnitude',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm magnitude choices',fontsize=15)
+    plt.savefig("storm_magnitude")
     
     sns.catplot(y='storm location',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm location choices',fontsize=15)
+    plt.savefig("storm_location")
     
     sns.catplot(y='user feedback',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Did you get accurate results?',fontsize=15)
+    plt.savefig("user_feedback")
     plt.show()
-    
+class MainGUI(tk.Tk):
+
+    def __init__(self, *args, **kwargs):
+        
+        tk.Tk.__init__(self, *args, **kwargs)
+        container = tk.Frame(self)
+
+        container.pack(side="top", fill="both", expand = True)
+
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
+
+        self.frames = {}
+
+        for F in (StartPage, PageOne, PageTwo,PageThree,PageFour,PageFive,PageSix,PageSeven,
+                  PageEight,PageNine,PageTen,PageEleven,PageTwelve,PageThirteen,PageFourteen):
+            frame = F(container, self)
+            self.frames[F] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
+
+        self.show_frame(StartPage)
+
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+
+        
+class StartPage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self,parent)
+        label = tk.Label(self, text="Personality Test: The Field, Cube, Ladder, Horse, and Flower graphical result", 
+                         font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+
+        button = tk.Button(self, text="Field result Graph",
+                            command=lambda: controller.show_frame(PageOne))
+        button.pack()
+
+        button2 = tk.Button(self, text="Cube Texture result Graph",
+                            command=lambda: controller.show_frame(PageTwo))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Cube color result graph",
+                            command=lambda: controller.show_frame(PageThree))
+        button3.pack()
+        
+        button4 = tk.Button(self, text="ladder length Result graph",
+                            command=lambda: controller.show_frame(PageFour))
+        button4.pack()
+        
+        button5 = tk.Button(self, text="ladder distance result graph",
+                            command=lambda: controller.show_frame(PageFive))
+        button5.pack()
+        
+        button6 = tk.Button(self, text="ladder cube distance result graph",
+                            command=lambda: controller.show_frame(PageSix))
+        button6.pack()
+        
+        button7 = tk.Button(self, text="ladder material result graph",
+                            command=lambda: controller.show_frame(PageSeven))
+        button7.pack()
+        
+        button8 = tk.Button(self, text="horse action result graph",
+                            command=lambda: controller.show_frame(PageEight))
+        button8.pack()
+        
+        button9 = tk.Button(self, text="horse color result graph",
+                            command=lambda: controller.show_frame(PageNine))
+        button9.pack()
+        
+        button10 = tk.Button(self, text="flowers result graph",
+                            command=lambda: controller.show_frame(PageTen))
+        button10.pack()
+        
+        button11 = tk.Button(self, text="weather result graph",
+                            command=lambda: controller.show_frame(PageEleven))
+        button11.pack()
+        
+        button12 = tk.Button(self, text="storm magnitude result graph",
+                            command=lambda: controller.show_frame(PageTwelve))
+        button12.pack()
+        
+        button13 = tk.Button(self, text="storm location result graph",
+                            command=lambda: controller.show_frame(PageThirteen))
+        button13.pack()
+        
+        button14 = tk.Button(self, text="Did you get accurate results?",
+                            command=lambda: controller.show_frame(PageFourteen))
+        button14.pack()
+
+
+class PageOne(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Field result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("field.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+        
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Two",
+                            command=lambda: controller.show_frame(PageTwo))
+        button2.pack()
+
+class PageTwo(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Cube Texture result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("cube_texture.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page One",
+                            command=lambda: controller.show_frame(PageOne))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Three",
+                            command=lambda: controller.show_frame(PageThree))
+        button3.pack()
+class PageThree(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Cube color result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("cube_color.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page two",
+                            command=lambda: controller.show_frame(PageTwo))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Four",
+                            command=lambda: controller.show_frame(PageFour))
+        button3.pack()
+class PageFour(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="ladder length Result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("ladder_length.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Three",
+                            command=lambda: controller.show_frame(PageThree))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Five",
+                            command=lambda: controller.show_frame(PageFive))
+        button3.pack()
+class PageFive(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="ladder distance result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("ladder_distance.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Four",
+                            command=lambda: controller.show_frame(PageFour))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Six",
+                            command=lambda: controller.show_frame(PageSix))
+        button3.pack()
+class PageSix(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="ladder cube distance result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("ladder_cube_distance.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Five",
+                            command=lambda: controller.show_frame(PageFive))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Seven",
+                            command=lambda: controller.show_frame(PageSeven))
+        button3.pack()
+class PageSeven(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="ladder material result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("ladder_material.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Six",
+                            command=lambda: controller.show_frame(PageSix))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Eight",
+                            command=lambda: controller.show_frame(PageEight))
+        button3.pack()
+class PageEight(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="horse action result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("horse_action.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Seven",
+                            command=lambda: controller.show_frame(PageSeven))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Nine",
+                            command=lambda: controller.show_frame(PageNine))
+        button3.pack()
+class PageNine(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="horse color result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("horse_color.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Eight",
+                            command=lambda: controller.show_frame(PageEight))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Ten",
+                            command=lambda: controller.show_frame(PageTen))
+        button3.pack() 
+class PageTen(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="flowers result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("flowers.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Nine",
+                            command=lambda: controller.show_frame(PageNine))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Eleven",
+                            command=lambda: controller.show_frame(PageEleven))
+        button3.pack() 
+class PageEleven(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="weather result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("weather.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Ten",
+                            command=lambda: controller.show_frame(PageTen))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Eleven",
+                            command=lambda: controller.show_frame(PageTwelve))
+        button3.pack() 
+class PageTwelve(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="storm magnitude result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("storm_magnitude.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Eleven",
+                            command=lambda: controller.show_frame(PageEleven))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Thirteen",
+                            command=lambda: controller.show_frame(PageThirteen))
+        button3.pack() 
+
+class PageThirteen(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="storm location result", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("storm_location.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Twelve",
+                            command=lambda: controller.show_frame(PageTwelve))
+        button2.pack()
+        
+        button3 = tk.Button(self, text="Page Fourteen",
+                            command=lambda: controller.show_frame(PageFourteen))
+        button3.pack() 
+class PageFourteen(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Did you get accurate results?", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+        
+        img = Image.open("user_feedback.png")
+        newsize = (400, 200) 
+        img = img.resize(newsize) 
+        img = ImageTk.PhotoImage(img)
+        picture = tk.Label(self, image = img)
+        picture.image = img
+        picture.pack()
+
+        button1 = tk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        button2 = tk.Button(self, text="Page Thirteen",
+                            command=lambda: controller.show_frame(PageThirteen))
+        button2.pack()
+         
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
     It aslo allow the user to buid their own fun quiz.
@@ -644,8 +1119,13 @@ def main():
             input_storm_inten,input_storm_loc,user_feedbackinput)
     #display the graph
     user_datagraph()
+    app = MainGUI()
+    app.title("Personality quiz graphic result")
+    app.mainloop()
+
     
 if __name__=="__main__":
     main()
 
                 
+
