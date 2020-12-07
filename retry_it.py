@@ -9,8 +9,16 @@ def retry_it():
     Returns:
         exit (function): no to retaking quiz
     '''
-    re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
-    if re_answer == 1:
-        main()
-    else:
-        return exit()
+    while True:
+        try:
+            re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
+            if re_answer == 1:
+                present_question_user_choices()
+            elif re_answer == 2:
+                return exit()
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter an integer.')
+            continue
