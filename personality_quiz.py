@@ -2,10 +2,8 @@
 #Project name: personality quiz
 #Alisson Fortis Sanchez
 #Shiqiong Lu
-#Ann huang
-#Hung Nuyen
-#Alisson Fortis Sanchez
-#Shiqiong Lu and Hung
+#Ann Hoang
+#Hung Nguyen
 # The code for changing pages was derived from: http://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
 # License: http://creativecommons.org/licenses/by-sa/3.0/	
 #Shiqiong Lu added codes for INST 326 Project GUI
