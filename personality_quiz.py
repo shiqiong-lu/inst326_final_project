@@ -393,7 +393,7 @@ class Quiz_results:
     def horse_activity_result(self):
         horse_representation = "The horse represents your ideal partner.\n"
 
-        print(horse_representation\n)
+        print(horse_representation)
         print("You horse choices represents the following:")
         
         # Activity
@@ -438,7 +438,7 @@ class Quiz_results:
         '''
         flower_representation = "The flowers represent your family and friends.\n"
 
-        print(flower_representation\n)
+        print(flower_representation)
         
         #Quantity
         few_results = "Just a Few: You are close with your family and have a small, tight-knit group of friends."
@@ -456,7 +456,7 @@ class Quiz_results:
         
         weather_representation = "The weather in your field reflects your general outlook on life.\n"
 
-        print(weather_representation\n)
+        print(weather_representation)
         
         # Weather Conditions
         rain_result = "Rain: Rain symbolizes the problems in your life, thus the harder the rain, the bigger the problems."
@@ -484,7 +484,7 @@ class Quiz_results:
         
         storm_representation = "The strength and position of the storm reflect the stress you're feeling in life.\n"
 
-        print (storm_representation\n)
+        print (storm_representation)
 
         # Intensity
         mild_result = "Mild (Just Passing Through): While you aren't immune to stress, you know that all things must pass."
