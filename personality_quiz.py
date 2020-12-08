@@ -65,7 +65,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-3.')
+            print('Please enter an integer.')
             continue
         
     while True:
@@ -77,7 +77,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-3.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -89,7 +89,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-7.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-7.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -101,7 +101,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -113,7 +113,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -125,7 +125,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -137,7 +137,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -149,7 +149,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-3.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -161,7 +161,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-3.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -173,7 +173,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -185,7 +185,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-4.')
                 continue
         except ValueError:
-            print('Please enter an integer from 1-4.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -197,7 +197,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     while True:
@@ -209,7 +209,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
     return (field, cube_texture, cube_color, ladder_length, ladder_dist, 
@@ -273,9 +273,7 @@ class Quiz_results:
  
     def cube_texture_result (self):
         
-        cube_representation = "The cube represents you. The size of the cube is your ego.\
-        The surface of the cube represents what is visibly observable about your personality,\
-        or maybe it is what you want others to think about you."
+        cube_representation = "The cube represents you. The size of the cube is your ego. The surface of the cube represents what is visibly observable about your personality, or maybe it is what you want others to think about you.\n"
 
         print (cube_representation)
         
@@ -337,8 +335,7 @@ class Quiz_results:
         
     def ladder_length_result(self):
         
-        ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships.\
-        The location and material of your ladder can also tell you how close you are with your friends. "
+        ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships. The location and material of your ladder can also tell you how close you are with your friends. \n"
 
         print(ladder_representation)
         
@@ -352,6 +349,8 @@ class Quiz_results:
         
         else:
             return(long_result)
+        
+        
     def ladder_distance_result(self):
          # Distance
         near_result = "Near: You are putting maximum effort and focus into achieving your goals."
@@ -388,11 +387,13 @@ class Quiz_results:
         
         else:
             return(weak_ladder)
+        
+        
 
     def horse_activity_result(self):
-        horse_representation = "The horse represents your ideal partner."
+        horse_representation = "The horse represents your ideal partner.\n"
 
-        print(horse_representation)
+        print(horse_representation\n)
         print("You horse choices represents the following:")
         
         # Activity
@@ -435,9 +436,9 @@ class Quiz_results:
         Think of flowers.
         Where are the flowers in your field, and how many are there?
         '''
-        flower_representation = "The flowers represent your family and friends."
+        flower_representation = "The flowers represent your family and friends.\n"
 
-        print(flower_representation)
+        print(flower_representation\n)
         
         #Quantity
         few_results = "Just a Few: You are close with your family and have a small, tight-knit group of friends."
@@ -453,9 +454,9 @@ class Quiz_results:
   
     def weather_result(self):
         
-        weather_representation = "The weather in your field reflects your general outlook on life."
+        weather_representation = "The weather in your field reflects your general outlook on life.\n"
 
-        print(weather_representation)
+        print(weather_representation\n)
         
         # Weather Conditions
         rain_result = "Rain: Rain symbolizes the problems in your life, thus the harder the rain, the bigger the problems."
@@ -481,9 +482,9 @@ class Quiz_results:
            
     def storm_magnitude_result(self):
         
-        storm_representation = "The strength and position of the storm reflect the stress you're feeling in life."
+        storm_representation = "The strength and position of the storm reflect the stress you're feeling in life.\n"
 
-        print (storm_representation)
+        print (storm_representation\n)
 
         # Intensity
         mild_result = "Mild (Just Passing Through): While you aren't immune to stress, you know that all things must pass."
@@ -1277,7 +1278,7 @@ def retry_it():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter 1 or 2.')
+            print('Please enter an integer.')
             continue
     
 if __name__=="__main__":
