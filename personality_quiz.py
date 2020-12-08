@@ -65,7 +65,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-3.')
             continue
         
     while True:
@@ -77,7 +77,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-3.')
             continue
     
     while True:
@@ -89,7 +89,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-7.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-7.')
             continue
     
     while True:
@@ -101,7 +101,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -113,7 +113,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -125,7 +125,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -137,7 +137,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -149,7 +149,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-3.')
             continue
     
     while True:
@@ -161,7 +161,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-3.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-3.')
             continue
     
     while True:
@@ -173,7 +173,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -185,7 +185,7 @@ def presentquestions_getchoices():
                 print('Please enter an integer from 1-4.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter an integer from 1-4.')
             continue
     
     while True:
@@ -197,7 +197,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     while True:
@@ -209,7 +209,7 @@ def presentquestions_getchoices():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
     return (field, cube_texture, cube_color, ladder_length, ladder_dist, 
