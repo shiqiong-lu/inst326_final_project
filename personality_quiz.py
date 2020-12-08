@@ -262,10 +262,10 @@ class Quiz_results:
 
         trimmed_result = "Well-Trimmed: You are analytical and cautious."
 
-        if self.field == "1" :
+        if self.field == 1 :
             return dead_result
         
-        elif self.field == "2" :
+        elif self.field == 2 :
             return healthy_result
         
         else:
@@ -285,10 +285,10 @@ class Quiz_results:
         bump_spike = "Bumpy or Spiky: You have a tendency to criticize others in an attempt to make them feel inferior to you."
 
         # If Cube Texture
-        if self.cube_texture =="1":
+        if self.cube_texture == 1:
             return smooth_result
         
-        elif self.cube_texture == "2":
+        elif self.cube_texture == 2:
             return rough_result
         
         else:
@@ -312,22 +312,22 @@ class Quiz_results:
         
          #If Cube Color
 
-        if self.cube_color == "1":
+        if self.cube_color == 1:
             return red_result
         
-        elif self.cube_color == "2":
+        elif self.cube_color == 2:
             return yellow_result
         
-        elif self.cube_color == "3":
+        elif self.cube_color == 3:
             return blue_result
         
-        elif self.cube_color == "4":
+        elif self.cube_color == 4:
             return violet_result
 
-        elif self.cube_color == "5":
+        elif self.cube_color == 5:
             return grey_result
         
-        elif self.cube_color == "6":
+        elif self.cube_color == 6:
             return black_result
         
         else:
@@ -344,7 +344,7 @@ class Quiz_results:
         
         long_result = "Long: Your goals are more far fetched and difficult to attain."
          # If Ladder Lengths
-        if self.ladder_length == "1":
+        if self.ladder_length == 1:
             return(short_result)
         
         else:
@@ -357,7 +357,7 @@ class Quiz_results:
         
         far_result = "Far: Your aren't putting much thought or effort into achieving your goals."
          # If Ladder Distance
-        if self.ladder_dist == "1":
+        if self.ladder_dist == 1:
             return(near_result)
         
         else:
@@ -365,12 +365,11 @@ class Quiz_results:
         
     def ladder_cube_result(self):
          # Ladder Distance
-        near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. \
-        If it's actually leaning on the cube, it means your friends can lean on you for support."
+        near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. If it's actually leaning on the cube, it means your friends can lean on you for support."
 
         far_ladder = "Far: You have a hard time opening up to people and letting them get close to you."
          # If Ladder Cube Distance
-        if self.ladder_dist_cube == "1":
+        if self.ladder_dist_cube == 1:
             return(near_ladder)
         
         else:
@@ -382,7 +381,7 @@ class Quiz_results:
         
         weak_ladder = "Weak: A weak ladder indicates a weak bond between you and those around you."
         # If Ladder Material
-        if self.ladder_mat == "1":
+        if self.ladder_mat == 1:
             return(strong_ladder)
         
         else:
@@ -404,10 +403,10 @@ class Quiz_results:
         sleep_result = "Sleeping or Grazing: Your ideal partner is calm and fully committed to you."
         
         # If Horse Action
-        if self.horse_act == "1":
+        if self.horse_act == 1:
             return(playing_result)
         
-        elif self.horse_act == "2":
+        elif self.horse_act == 2:
             return(running_result)
         
         else:
@@ -422,10 +421,10 @@ class Quiz_results:
         white_horse = "White: You value loyalty and trust more than anything else in a relationship."
         
         # If Horse Color
-        if self.horse_col == "1":
+        if self.horse_col == 1:
             return(brown_horse)
         
-        elif self.horse_col == "2":
+        elif self.horse_col == 2:
             return(black_horse)
         
         else:
@@ -446,7 +445,7 @@ class Quiz_results:
         everywhere_results = "They're Everywhere!:You're a social butterfly! With family and friends too numerous to count, you'll never be lonely."
 
         # If Flower Quantity
-        if self.flowers == "1":
+        if self.flowers == 1:
             return few_results
 
         else:
@@ -468,13 +467,13 @@ class Quiz_results:
         sun_result = "Sun: You are optimistic and carefree!"
 
         # If Weather
-        if self.weather == "1":
+        if self.weather == 1:
             return rain_result
         
-        elif self.weather == "2":
+        elif self.weather == 2:
             return fog_result
         
-        elif self.weather == "3":
+        elif self.weather == 3:
             return wind_result
         
         else:
@@ -495,7 +494,7 @@ class Quiz_results:
 
 
         # If Intensity
-        if self.storm_inten == "1":
+        if self.storm_inten == 1:
             return mild_result
 
         else:
@@ -508,7 +507,7 @@ class Quiz_results:
         
         above_result = "Right Above Your Cube: You are deeply affected by stress and have a hard time seeing past it to get back to the bigger picture."
         # If Location
-        if self.storm_loc == "1":
+        if self.storm_loc == 1:
             return background_result
 
         else:
@@ -528,13 +527,13 @@ def user_feedback(user_response):
         '''
     
 
-    if user_response == "1":
+    if user_response == 1:
         print ("You agreed your results were very accurate!")
     
-    if user_response == "2" :
+    if user_response == 2 :
         print ("You agreed that your results were somewhat, but not completely accurate!")
 
-    if user_response == "3":
+    if user_response == 3:
         print ("We are sorry your results were not accurate!")
 
 def getfile_len(file_path):
