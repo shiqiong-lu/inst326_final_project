@@ -1278,7 +1278,7 @@ def retry_it():
                 print('Please enter 1 or 2.')
                 continue
         except ValueError:
-            print('Please enter an integer.')
+            print('Please enter 1 or 2.')
             continue
     
 if __name__=="__main__":
