@@ -128,10 +128,10 @@ class Quiz_results:
 
         trimmed_result = "Well-Trimmed: You are analytical and cautious."
 
-        if self.field == "1" :
+        if self.field == 1 :
             return dead_result
         
-        elif self.field == "2" :
+        elif self.field == 2 :
             return healthy_result
         
         else:
@@ -153,10 +153,10 @@ class Quiz_results:
         bump_spike = "Bumpy or Spiky: You have a tendency to criticize others in an attempt to make them feel inferior to you."
 
         # If Cube Texture
-        if self.cube_texture =="1":
+        if self.cube_texture ==1:
             return smooth_result
         
-        elif self.cube_texture == "2":
+        elif self.cube_texture == 2:
             return rough_result
         
         else:
@@ -180,22 +180,22 @@ class Quiz_results:
         
          #If Cube Color
 
-        if self.cube_color == "1":
+        if self.cube_color == 1:
             return red_result
         
-        elif self.cube_color == "2":
+        elif self.cube_color == 2:
             return yellow_result
         
-        elif self.cube_color == "3":
+        elif self.cube_color == 3:
             return blue_result
         
-        elif self.cube_color == "4":
+        elif self.cube_color == 4:
             return violet_result
 
-        elif self.cube_color == "5":
+        elif self.cube_color == 5:
             return grey_result
         
-        elif self.cube_color == "6":
+        elif self.cube_color == 6:
             return black_result
         
         else:
@@ -213,7 +213,7 @@ class Quiz_results:
         
         long_result = "Long: Your goals are more far fetched and difficult to attain."
          # If Ladder Lengths
-        if self.ladder_length == "1":
+        if self.ladder_length == 1:
             return(short_result)
         
         else:
@@ -224,7 +224,7 @@ class Quiz_results:
         
         far_result = "Far: Your aren't putting much thought or effort into achieving your goals."
          # If Ladder Distance
-        if self.ladder_dist == "1":
+        if self.ladder_dist == 1:
             return(near_result)
         
         else:
@@ -237,7 +237,7 @@ class Quiz_results:
 
         far_ladder = "Far: You have a hard time opening up to people and letting them get close to you."
          # If Ladder Cube Distance
-        if self.ladder_dist_cube == "1":
+        if self.ladder_dist_cube == 1:
             return(near_ladder)
         
         else:
@@ -249,7 +249,7 @@ class Quiz_results:
         
         weak_ladder = "Weak: A weak ladder indicates a weak bond between you and those around you."
         # If Ladder Material
-        if self.ladder_mat == "1":
+        if self.ladder_mat == 1:
             return(strong_ladder)
         
         else:
@@ -269,10 +269,10 @@ class Quiz_results:
         sleep_result = "Sleeping or Grazing: Your ideal partner is calm and fully committed to you."
         
         # If Horse Action
-        if self.horse_act == "1":
+        if self.horse_act == 1:
             return(playing_result)
         
-        elif self.horse_act == "2":
+        elif self.horse_act == 2:
             return(running_result)
         
         else:
@@ -287,10 +287,10 @@ class Quiz_results:
         white_horse = "White: You value loyalty and trust more than anything else in a relationship."
         
         # If Horse Color
-        if self.horse_col == "1":
+        if self.horse_col == 1:
             return(brown_horse)
         
-        elif self.horse_col == "2":
+        elif self.horse_col == 2:
             return(black_horse)
         
         else:
@@ -311,7 +311,7 @@ class Quiz_results:
         everywhere_results = "They're Everywhere!:You're a social butterfly! With family and friends too numerous to count, you'll never be lonely."
 
         # If Flower Quantity
-        if self.flowers == "1":
+        if self.flowers == 1:
             return few_results
 
         else:
@@ -333,13 +333,13 @@ class Quiz_results:
         sun_result = "Sun: You are optimistic and carefree!"
 
         # If Weather
-        if self.weather == "1":
+        if self.weather == 1:
             return rain_result
         
-        elif self.weather == "2":
+        elif self.weather == 2:
             return fog_result
         
-        elif self.weather == "3":
+        elif self.weather == 3:
             return wind_result
         
         else:
@@ -360,7 +360,7 @@ class Quiz_results:
 
 
         # If Intensity
-        if self.storm_inten == "1":
+        if self.storm_inten == 1:
             return mild_result
 
         else:
@@ -373,7 +373,7 @@ class Quiz_results:
         
         above_result = "Right Above Your Cube: You are deeply affected by stress and have a hard time seeing past it to get back to the bigger picture."
         # If Location
-        if self.storm_loc == "1":
+        if self.storm_loc == 1:
             return background_result
 
         else:
@@ -552,60 +552,62 @@ def user_datagraph():
     #print(df)
     sns.catplot(y='field',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Field choices',fontsize=15)
-    plt.savefig("field")
-    
+    plt.savefig("field.png")
+    plt.close()
     sns.catplot(y='cube texture',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube texture choices',fontsize=15)
-    plt.savefig("cube_texture")
-    
+    plt.savefig("cube_texture.png")
+    plt.close()
     sns.catplot(y='cube color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube color choices',fontsize=15)
-    plt.savefig("cube_color")
-    
+    plt.savefig("cube_color.png")
+    plt.close()
     sns.catplot(y='ladder length',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder length choices',fontsize=15)
-    plt.savefig("ladder_length")
-    
+    plt.savefig("ladder_length.png")
+    plt.close()
     sns.catplot(y='ladder distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder distance choices',fontsize=15)
-    plt.savefig("ladder_distance")
-    
+    plt.savefig("ladder_distance.png")
+    plt.close()
     sns.catplot(y='ladder cube distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder cube distance',fontsize=15)
-    plt.savefig("ladder_cube_distance")
-    
+    plt.savefig("ladder_cube_distance.png")
+    plt.close()
     sns.catplot(y='ladder material',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder material choices',fontsize=15)
-    plt.savefig("ladder_material")
-    
+    plt.savefig("ladder_material.png")
+    plt.close()
     sns.catplot(y='horse action',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse action choices',fontsize=15)
-    plt.savefig("horse_action")
-    
+    plt.savefig("horse_action.png")
+    plt.close()
     sns.catplot(y='horse color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse color choices',fontsize=15)
-    plt.savefig("horse_color")
-    
+    plt.savefig("horse_color.png")
+    plt.close()
     sns.catplot(y='flowers',kind='count',palette="ch:.25",data=df)
     plt.ylabel('flowers choices',fontsize=15)
-    plt.savefig("flowers")
-    
+    plt.savefig("flowers.png")
+    plt.close()
     sns.catplot(y='weather',kind='count',palette="ch:.25",data=df)
     plt.ylabel('weather choices',fontsize=15)
-    plt.savefig("weather")
-    
+    plt.savefig("weather.png")
+    plt.close()
     sns.catplot(y='storm magnitude',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm magnitude choices',fontsize=15)
-    plt.savefig("storm_magnitude")
-    
+    plt.savefig("storm_magnitude.png")
+    plt.close()
     sns.catplot(y='storm location',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm location choices',fontsize=15)
-    plt.savefig("storm_location")
-    
+    plt.savefig("storm_location.png")
+    plt.close()
     sns.catplot(y='user feedback',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Did you get accurate results?',fontsize=15)
-    plt.savefig("user_feedback")
-    plt.show()
+    plt.savefig("user_feedback.png")
+    plt.close()
+    #plt.show()
+    
 class MainGUI(tk.Tk):
 
     def __init__(self, *args, **kwargs):
@@ -1122,10 +1124,25 @@ def main():
     app = MainGUI()
     app.title("Personality quiz graphic result")
     app.mainloop()
-
+def retry_it():
+    '''Yes or no option to allow the user to retake the quiz
+    
+    Args:
+        re_answer (int): yes or no to retaking quiz
+    
+    Returns:
+        exit (function): no to retaking quiz
+    '''
+    re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
+    if re_answer == 1:
+        main()
+    else:
+        return exit()
+    
     
 if __name__=="__main__":
     main()
+    retry_it()
 
                 
 
