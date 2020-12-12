@@ -60,7 +60,11 @@ def presentquestions_getchoices():
     while True:
         try:
             field = int(input('Think of an open field. Is it (1) dry and dead, (2) grassy and healthy, or (3) well-trimmed? '))
+<<<<<<< HEAD
             if field in range(1, 4):
+=======
+            if field in range(1, 3):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -72,7 +76,11 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
+<<<<<<< HEAD
             if cube_texture in range(1, 4):
+=======
+            if cube_texture in range(1, 3):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -84,7 +92,11 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
+<<<<<<< HEAD
             if cube_color in range(1, 8):
+=======
+            if cube_color in range(1, 7):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter an integer from 1-7.')
@@ -96,7 +108,11 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
+<<<<<<< HEAD
             if ladder_length in range(1, 3):
+=======
+            if ladder_length in range(1, 2):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -108,7 +124,11 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
+<<<<<<< HEAD
             if ladder_dist in range(1, 3):
+=======
+            if ladder_dist in range(1, 2):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -120,7 +140,11 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
+<<<<<<< HEAD
             if ladder_dist_cube in range(1, 3):
+=======
+            if ladder_dist_cube in range(1, 2):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -132,7 +156,11 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
+<<<<<<< HEAD
             if ladder_mat in range(1, 3):
+=======
+            if ladder_mat in range(1, 2):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -144,7 +172,11 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
+<<<<<<< HEAD
             if horse_act in range(1, 4):
+=======
+            if horse_act in range(1, 3):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -156,7 +188,11 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
+<<<<<<< HEAD
             if horse_col in range(1, 4):
+=======
+            if horse_col in range(1, 3):
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -164,6 +200,7 @@ def presentquestions_getchoices():
         except ValueError:
             print('Please enter an integer from 1-3.')
             continue
+<<<<<<< HEAD
     
     while True:
         try:
@@ -213,6 +250,57 @@ def presentquestions_getchoices():
             print('Please enter 1 or 2.')
             continue
     
+=======
+    
+    while True:
+        try:
+            flowers = int(input('Think of flowers. Are there (1) few or are they (2) everywhere? '))
+            if flowers in range(1, 2):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            weather = int(input('Think of what the weather in the field is like. Is there (1) rain, (2) fog, (3) wind, or (4) sun? '))
+            if weather in range(1, 4):
+                break
+            else:
+                print('Please enter an integer from 1-4.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-4.')
+            continue
+    
+    while True:
+        try:
+            storm_inten = int(input('Think of a storm. Is it (1) mild or (2) strong? '))
+            if storm_inten in range(1, 2):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            storm_loc = int(input('Is the storm (1) in the background or (2) right above the cube? '))
+            if storm_loc in range(1, 2):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
     return (field, cube_texture, cube_color, ladder_length, ladder_dist, 
             ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, 
             weather, storm_inten, storm_loc)
@@ -1295,4 +1383,11 @@ def retry_it():
     
 if __name__=="__main__":
     main()
+<<<<<<< HEAD
     retry_it()
+=======
+    retry_it()
+
+                
+
+>>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
