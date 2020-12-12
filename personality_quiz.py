@@ -14,7 +14,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import tkinter as tk
 from PIL import ImageTk, Image
-import keyboard
+
 
 LARGE_FONT= ("Verdana", 18)
 
@@ -191,7 +191,7 @@ def presentquestions_getchoices():
 <<<<<<< HEAD
             if horse_col in range(1, 4):
 =======
-            if horse_col in range(1, 3):
+            if horse_col in range(1, 4):
 >>>>>>> 69389c4e9ef8a283928193e125f937659ff95264
                 break
             else:
