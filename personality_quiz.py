@@ -2,10 +2,8 @@
 #Project name: personality quiz
 #Alisson Fortis Sanchez
 #Shiqiong Lu
-#Ann huang
-#Hung Nuyen
-#Alisson Fortis Sanchez
-#Shiqiong Lu and Hung
+#Ann Hoang
+#Hung Nguyen
 # The code for changing pages was derived from: http://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
 # License: http://creativecommons.org/licenses/by-sa/3.0/	
 #Shiqiong Lu added codes for INST 326 Project GUI
@@ -16,6 +14,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import tkinter as tk
 from PIL import ImageTk, Image
+import keyboard
 
 LARGE_FONT= ("Verdana", 18)
 
@@ -30,7 +29,6 @@ def presentquestions_getchoices():
         field (int): field choice
         cube_texture (int): cube texture choice
         cube_color (int): cube color choice
-        cube_other (int): possible other cube choices
         ladder_length (int): ladder length choice
         ladder_dist (int): ladder distance choice
         ladder_dist_cube (int): ladder distance to cube choice
@@ -46,7 +44,6 @@ def presentquestions_getchoices():
         field (int): field choice
         cube_texture (int): cube texture choice
         cube_color (int): cube color choice
-        cube_other (int): possible other cube choices
         ladder_length (int): ladder length choice
         ladder_dist (int): ladder distance choice
         ladder_dist_cube (int): ladder distance to cube choice
@@ -60,31 +57,168 @@ def presentquestions_getchoices():
     '''
     print("Please enter the corresponding number for each answer choice")
     
-    field = int(input('Think of an open field. Is it (1) dry and dead, (2) grassy and healthy, or (3) well-trimmed? '))
-    cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
-    cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
-    #cube_other = int(input('Is the cube (1) transparent, (2) made out of water/ice, (3) hollow, or (4) made out of metal/rock? '))
-    ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
-    ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
-    ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
-    ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
-    horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
-    horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
-    flowers = int(input('Think of flowers. Are there (1) few or (2) they are everywhere? '))
-    weather = int(input('Think of what the weather in the field is like. Is there (1) rain, (2) fog, (3) wind, or (4) sun? '))
-    storm_inten = int(input('Think of a storm. Is it (1) mild or (2) strong? '))
-    storm_loc = int(input('Is the storm (1) in the background or (2) right above the cube? '))
+    while True:
+        try:
+            field = int(input('Think of an open field. Is it (1) dry and dead, (2) grassy and healthy, or (3) well-trimmed? '))
+            if field in range(1, 4):
+                break
+            else:
+                print('Please enter an integer from 1-3.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-3.')
+            continue
+        
+    while True:
+        try:
+            cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
+            if cube_texture in range(1, 4):
+                break
+            else:
+                print('Please enter an integer from 1-3.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-3.')
+            continue
     
-    return (field,cube_texture,
-            cube_color,
-            ladder_length,ladder_dist,
-            ladder_dist_cube,ladder_mat,
-            horse_act,horse_col,flowers,weather,
-            storm_inten,storm_loc)
+    while True:
+        try:
+            cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
+            if cube_color in range(1, 8):
+                break
+            else:
+                print('Please enter an integer from 1-7.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-7.')
+            continue
+    
+    while True:
+        try:
+            ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
+            if ladder_length in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
+            if ladder_dist in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
+            if ladder_dist_cube in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
+            if ladder_mat in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
+            if horse_act in range(1, 4):
+                break
+            else:
+                print('Please enter an integer from 1-3.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-3.')
+            continue
+    
+    while True:
+        try:
+            horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
+            if horse_col in range(1, 4):
+                break
+            else:
+                print('Please enter an integer from 1-3.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-3.')
+            continue
+    
+    while True:
+        try:
+            flowers = int(input('Think of flowers. Are there (1) few or are they (2) everywhere? '))
+            if flowers in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            weather = int(input('Think of what the weather in the field is like. Is there (1) rain, (2) fog, (3) wind, or (4) sun? '))
+            if weather in range(1, 5):
+                break
+            else:
+                print('Please enter an integer from 1-4.')
+                continue
+        except ValueError:
+            print('Please enter an integer from 1-4.')
+            continue
+    
+    while True:
+        try:
+            storm_inten = int(input('Think of a storm. Is it (1) mild or (2) strong? '))
+            if storm_inten in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    while True:
+        try:
+            storm_loc = int(input('Is the storm (1) in the background or (2) right above the cube? '))
+            if storm_loc in range(1, 3):
+                break
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
+    
+    return (field, cube_texture, cube_color, ladder_length, ladder_dist, 
+            ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, 
+            weather, storm_inten, storm_loc)
 
 class Quiz_results:
     '''Class will calculate and display results
-
     Args:
     * field_result(): 
     * cube_result ():Texture & Color
@@ -93,10 +227,8 @@ class Quiz_results:
     * flower_result(): Quantity
     * weather_result():Conditions
     * storm_result(): Location & Intensity
-
     Returns:
     * total_summary(): combination result of all factor results from quiz
-
     '''
     def __init__(self, field, cube_texture,cube_color,ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
         self.field = field
@@ -139,9 +271,7 @@ class Quiz_results:
  
     def cube_texture_result (self):
         
-        cube_representation = "The cube represents you. The size of the cube is your ego.\
-        The surface of the cube represents what is visibly observable about your personality,\
-        or maybe it is what you want others to think about you."
+        cube_representation = "The cube represents you. The size of the cube is your ego. The surface of the cube represents what is visibly observable about your personality, or maybe it is what you want others to think about you.\n"
 
         print (cube_representation)
         
@@ -153,7 +283,7 @@ class Quiz_results:
         bump_spike = "Bumpy or Spiky: You have a tendency to criticize others in an attempt to make them feel inferior to you."
 
         # If Cube Texture
-        if self.cube_texture ==1:
+        if self.cube_texture == 1:
             return smooth_result
         
         elif self.cube_texture == 2:
@@ -203,8 +333,7 @@ class Quiz_results:
         
     def ladder_length_result(self):
         
-        ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships.\
-        The location and material of your ladder can also tell you how close you are with your friends. "
+        ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships. The location and material of your ladder can also tell you how close you are with your friends. \n"
 
         print(ladder_representation)
         
@@ -218,6 +347,8 @@ class Quiz_results:
         
         else:
             return(long_result)
+        
+        
     def ladder_distance_result(self):
          # Distance
         near_result = "Near: You are putting maximum effort and focus into achieving your goals."
@@ -232,8 +363,7 @@ class Quiz_results:
         
     def ladder_cube_result(self):
          # Ladder Distance
-        near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. \
-        If it's actually leaning on the cube, it means your friends can lean on you for support."
+        near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. If it's actually leaning on the cube, it means your friends can lean on you for support."
 
         far_ladder = "Far: You have a hard time opening up to people and letting them get close to you."
          # If Ladder Cube Distance
@@ -254,9 +384,11 @@ class Quiz_results:
         
         else:
             return(weak_ladder)
+        
+        
 
     def horse_activity_result(self):
-        horse_representation = "The horse represents your ideal partner."
+        horse_representation = "The horse represents your ideal partner.\n"
 
         print(horse_representation)
         print("You horse choices represents the following:")
@@ -301,7 +433,7 @@ class Quiz_results:
         Think of flowers.
         Where are the flowers in your field, and how many are there?
         '''
-        flower_representation = "The flowers represent your family and friends."
+        flower_representation = "The flowers represent your family and friends.\n"
 
         print(flower_representation)
         
@@ -319,7 +451,7 @@ class Quiz_results:
   
     def weather_result(self):
         
-        weather_representation = "The weather in your field reflects your general outlook on life."
+        weather_representation = "The weather in your field reflects your general outlook on life.\n"
 
         print(weather_representation)
         
@@ -347,7 +479,7 @@ class Quiz_results:
            
     def storm_magnitude_result(self):
         
-        storm_representation = "The strength and position of the storm reflect the stress you're feeling in life."
+        storm_representation = "The strength and position of the storm reflect the stress you're feeling in life.\n"
 
         print (storm_representation)
 
@@ -393,13 +525,13 @@ def user_feedback(user_response):
         '''
     
 
-    if user_response == "1":
+    if user_response == 1:
         print ("You agreed your results were very accurate!")
     
-    if user_response == "2" :
+    if user_response == 2 :
         print ("You agreed that your results were somewhat, but not completely accurate!")
 
-    if user_response == "3":
+    if user_response == 3:
         print ("We are sorry your results were not accurate!")
 
 def getfile_len(file_path):
@@ -552,62 +684,75 @@ def user_datagraph():
     #print(df)
     sns.catplot(y='field',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Field choices',fontsize=15)
-    plt.savefig("field.png")
+    plt.savefig("field")
     plt.close()
+    
     sns.catplot(y='cube texture',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube texture choices',fontsize=15)
-    plt.savefig("cube_texture.png")
+    plt.savefig("cube_texture")
     plt.close()
+    
     sns.catplot(y='cube color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Cube color choices',fontsize=15)
-    plt.savefig("cube_color.png")
+    plt.savefig("cube_color")
     plt.close()
+    
     sns.catplot(y='ladder length',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder length choices',fontsize=15)
-    plt.savefig("ladder_length.png")
+    plt.savefig("ladder_length")
     plt.close()
+    
     sns.catplot(y='ladder distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder distance choices',fontsize=15)
-    plt.savefig("ladder_distance.png")
+    plt.savefig("ladder_distance")
     plt.close()
+    
     sns.catplot(y='ladder cube distance',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder cube distance',fontsize=15)
-    plt.savefig("ladder_cube_distance.png")
+    plt.savefig("ladder_cube_distance")
     plt.close()
+    
+    
     sns.catplot(y='ladder material',kind='count',palette="ch:.25",data=df)
     plt.ylabel('ladder material choices',fontsize=15)
-    plt.savefig("ladder_material.png")
+    plt.savefig("ladder_material")
     plt.close()
+    
     sns.catplot(y='horse action',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse action choices',fontsize=15)
-    plt.savefig("horse_action.png")
+    plt.savefig("horse_action")
     plt.close()
+    
     sns.catplot(y='horse color',kind='count',palette="ch:.25",data=df)
     plt.ylabel('horse color choices',fontsize=15)
-    plt.savefig("horse_color.png")
+    plt.savefig("horse_color")
     plt.close()
+    
     sns.catplot(y='flowers',kind='count',palette="ch:.25",data=df)
     plt.ylabel('flowers choices',fontsize=15)
-    plt.savefig("flowers.png")
+    plt.savefig("flowers")
     plt.close()
+    
     sns.catplot(y='weather',kind='count',palette="ch:.25",data=df)
     plt.ylabel('weather choices',fontsize=15)
-    plt.savefig("weather.png")
+    plt.savefig("weather")
     plt.close()
+    
     sns.catplot(y='storm magnitude',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm magnitude choices',fontsize=15)
-    plt.savefig("storm_magnitude.png")
+    plt.savefig("storm_magnitude")
     plt.close()
+    
     sns.catplot(y='storm location',kind='count',palette="ch:.25",data=df)
     plt.ylabel('storm location choices',fontsize=15)
-    plt.savefig("storm_location.png")
+    plt.savefig("storm_location")
     plt.close()
+    
     sns.catplot(y='user feedback',kind='count',palette="ch:.25",data=df)
     plt.ylabel('Did you get accurate results?',fontsize=15)
-    plt.savefig("user_feedback.png")
+    plt.savefig("user_feedback")
     plt.close()
-    #plt.show()
-    
+    plt.show()
 class MainGUI(tk.Tk):
 
     def __init__(self, *args, **kwargs):
@@ -1076,7 +1221,7 @@ def main():
     print("I also recommend writing your answers down so that it's easier to figure out your results at the end\n")
     print("and harder to waffle about your answers or change them for a result that you prefer!\n")
     personalityquiz=presentquestions_getchoices()
-    print("Your input are",personalityquiz)
+    #print("Your input are",personalityquiz)
     (input_field,input_cube_texture,
             input_cube_color,
             input_ladder_length,input_ladder_dist,
@@ -1124,6 +1269,7 @@ def main():
     app = MainGUI()
     app.title("Personality quiz graphic result")
     app.mainloop()
+    
 def retry_it():
     '''Yes or no option to allow the user to retake the quiz
     
@@ -1133,16 +1279,20 @@ def retry_it():
     Returns:
         exit (function): no to retaking quiz
     '''
-    re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
-    if re_answer == 1:
-        main()
-    else:
-        return exit()
-    
+    while True:
+        try:
+            re_answer = int(input('Retake quiz: (1) yes or (2) no? '))
+            if re_answer == 1:
+                main()
+            elif re_answer == 2:
+                return exit()
+            else:
+                print('Please enter 1 or 2.')
+                continue
+        except ValueError:
+            print('Please enter 1 or 2.')
+            continue
     
 if __name__=="__main__":
     main()
     retry_it()
-
-                
-
