@@ -236,6 +236,8 @@ class Quiz_results:
     * storm_result(): Location & Intensity
     Returns:
     * total_summary(): combination result of all factor results from quiz
+    Side effects:
+    * Prints messages on meaning of choice
     '''
     def __init__(self, field, cube_texture,cube_color,ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
         self.field = field
@@ -255,6 +257,19 @@ class Quiz_results:
     #Alisson Fortis Sanchez
     
     def field_result(self):
+        '''Get user's field choice
+        
+        Args:
+            field (int): field choice
+            
+        Returns:
+            dead_result (str): if user entered 1 for field
+            healthy_result (str): if user entered 2 for field
+            trimmed_result (str): if user entered 3 for field
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         field_representation = "The field represents your mind. Its size is the representation of your knowledge of the world, and how vast your personality is.\n"
 
@@ -276,6 +291,19 @@ class Quiz_results:
             return trimmed_result
  
     def cube_texture_result (self):
+        '''Get user's cube texture choice
+        
+        Args:
+            cube_texture (int): cube texture choice
+            
+        Returns:
+            smooth_result (str): if user entered 1 for cube_texture
+            rough_result (str): if user entered 2 for cube_texture
+            bump_spike (str): if user entered 3 for cube_texture
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         cube_representation = "The cube represents you. The size of the cube is your ego. The surface of the cube represents what is visibly observable about your personality, or maybe it is what you want others to think about you.\n"
 
@@ -299,6 +327,21 @@ class Quiz_results:
             return bump_spike
         
     def cube_color_result (self):
+        '''Get user's cube color choice
+        
+        Args:
+            cube_color (int): cube color choice
+            
+        Returns:
+            red_result (str): if user entered 1 for cube_color
+            yellow_result (str): if user entered 2 for cube_color
+            blue_result (str): if user entered 3 for cube_color
+            violet_result (str): if user entered 4 for cube_color
+            grey_result (str): if user entered 5 for cube_color
+            black_result (str): if user entered 6 for cube_color
+            white_result (str): if user entered 7 for cube_color
+        '''
+        
         # Color
         red_result = "Red: You are physically active and enjoy rich sensory experiences."
 
@@ -338,6 +381,18 @@ class Quiz_results:
             return white_result
         
     def ladder_length_result(self):
+        '''Get user's ladder length choice
+        
+        Args:
+            ladder_length (int): ladder length choice
+            
+        Returns:
+            short_result (str): if user entered 1 for ladder_length
+            long_result (str): if user entered 2 for ladder_length
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships. The location and material of your ladder can also tell you how close you are with your friends. \n"
 
@@ -356,6 +411,16 @@ class Quiz_results:
         
         
     def ladder_distance_result(self):
+        '''Get user's ladder distance choice
+        
+        Args:
+            ladder_dist (int): ladder distance choice
+            
+        Returns:
+            near_result (str): if user entered 1 for ladder_dist
+            far_result (str): if user entered 2 for ladder_dist
+        '''
+        
          # Distance
         near_result = "Near: You are putting maximum effort and focus into achieving your goals."
         
@@ -368,6 +433,16 @@ class Quiz_results:
             return(far_result)
         
     def ladder_cube_result(self):
+        '''Get user's ladder distance to cube choice
+        
+        Args:
+            ladder_dist_cube (int): ladder distance to cube choice
+            
+        Returns:
+            near_ladder (str): if user entered 1 for ladder_dist_cube
+            far_ladder (str): if user entered 2 for ladder_dist_cube
+        '''
+        
          # Ladder Distance
         near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. If it's actually leaning on the cube, it means your friends can lean on you for support."
 
@@ -380,6 +455,16 @@ class Quiz_results:
             return(far_ladder)
 
     def ladder_material_result(self):
+        '''Get user's ladder material choice
+        
+        Args:
+            ladder_mat (int): ladder material choice
+            
+        Returns:
+            strong_ladder (str): if user entered 1 for ladder_mat
+            weak_ladder (str): if user entered 2 for ladder_mat
+        '''
+        
         # Ladder Material
         strong_ladder = "Strong: The stronger the material (e.g. stone, metal, etc.), the stronger the bond with those around you !"
         
@@ -394,6 +479,20 @@ class Quiz_results:
         
 
     def horse_activity_result(self):
+        '''Get user's horse activity choice
+        
+        Args:
+            horse_act (int): horse activity choice
+            
+        Returns:
+            playing_result (str): if user entered 1 for horse_act
+            running_result (str): if user entered 2 for horse_act
+            sleep_result (str): if user entered 3 for horse_act      
+  
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         horse_representation = "The horse represents your ideal partner.\n"
 
         print(horse_representation)
@@ -417,6 +516,17 @@ class Quiz_results:
             return(sleep_result)
         
     def horse_color_result(self):
+        '''Get user's horse color choice
+        
+        Args:
+            horse_col (int): horse color choice
+            
+        Returns:
+            brown_horse (str): if user entered 1 for horse_col
+            black_horse (str): if user entered 2 for horse_col
+            white_horse (str): if user entered 3 for horse_col
+        '''
+        
         # Color
         brown_horse = "Brown: You prize comfort and reliability above all else. Otherwise, you don't have a specific set of expectations for your partner."
         
@@ -435,6 +545,19 @@ class Quiz_results:
             return(white_horse)
    
     def flower_result(self):
+        '''Get user's flowers choice
+        
+        Args:
+            flowers (int): flowers choice
+            
+        Returns:
+            few_results (str): if user entered 1 for flowers
+            everywhere_results (str): if user entered 2 for flowers
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         '''
         Think of flowers.
         Where are the flowers in your field, and how many are there?
@@ -456,6 +579,21 @@ class Quiz_results:
             return everywhere_results
   
     def weather_result(self):
+        '''Get user's weather choice
+        
+        Args:
+            weather (int): weather choice
+            
+        Returns:
+            rain_result (str): if user entered 1 for weather
+            fog_result (str): if user entered 2 for weather
+            wind_result (str): if user entered 3 for weather
+            sun_result (str): if user entered 4 for weather
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         
         weather_representation = "The weather in your field reflects your general outlook on life.\n"
 
@@ -484,6 +622,19 @@ class Quiz_results:
             return sun_result
            
     def storm_magnitude_result(self):
+        '''Get user's storm intensity choice
+        
+        Args:
+            storm_inten (int): storm intensity choice
+            
+        Returns:
+            mild_result (str): if user entered 1 for storm_inten
+            strong_result (str): if user entered 2 for storm_inten
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         
         storm_representation = "The strength and position of the storm reflect the stress you're feeling in life.\n"
 
@@ -506,6 +657,16 @@ class Quiz_results:
 
         
     def storm_location_result(self):
+        '''Get user's storm location choice
+        
+        Args:
+            storm_loc (int): storm location choice
+            
+        Returns:
+            background_result (str): if user entered 1 for storm_loc
+            above_result (str): if user entered 2 for storm_loc
+        '''
+        
         # Location
         background_result = "In the Background: Any obstacles that might be causing you grief are not at the forefront of your mind. You are good at managing your anxiety."
         
@@ -1228,7 +1389,7 @@ def main():
     print("\n")
     print("\n")
     personalityquiz=presentquestions_getchoices()
-    #print("Your inputs are",personalityquiz)
+    #print("Your inputs are ",personalityquiz)
     (input_field,input_cube_texture,
             input_cube_color,
             input_ladder_length,input_ladder_dist,
