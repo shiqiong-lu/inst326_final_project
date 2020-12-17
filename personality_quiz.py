@@ -22,7 +22,7 @@ def get_user_info():
     user_id=input("Please enter your name: ")
     return user_id
 
-def presentquestions_getchoices():
+def presentquestions_getchoices(): # coded by Ann Hoang
     '''Display questions and choices, record answers from user
     
     Args:
@@ -54,6 +54,13 @@ def presentquestions_getchoices():
         weather (int): weather choice
         storm_inten (int): storm intensity choice
         storm_loc (int): storm location choice
+        
+    Raises:
+        ValueError: user does not enter integer in given range
+        
+    Side effects:
+        Prints quiz questions
+        Prints error messages
     '''
     print("Please enter the corresponding number for each answer choice")
     
@@ -72,7 +79,6 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
-
             if cube_texture in range(1, 4):
                 break
             else:
@@ -85,10 +91,7 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
-
             if cube_color in range(1, 8):
-
- 
                 break
             else:
                 print('Please enter an integer from 1-7.')
@@ -100,10 +103,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
-
             if ladder_length in range(1, 3):
-
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -115,9 +115,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
-
             if ladder_dist in range(1, 3):
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -129,9 +127,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
-
             if ladder_dist_cube in range(1, 3):
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -143,7 +139,6 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
-
             if ladder_mat in range(1, 3):
                 break
             else:
@@ -156,9 +151,7 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
-
             if horse_act in range(1, 4):
-
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -170,9 +163,7 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
-
             if horse_col in range(1, 4):
-
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -180,7 +171,6 @@ def presentquestions_getchoices():
         except ValueError:
             print('Please enter an integer from 1-3.')
             continue
-
     
     while True:
         try:
@@ -262,7 +252,6 @@ class Quiz_results:
         self.storm_inten = storm_inten
         self.storm_loc = storm_loc
 
-    # coded by Ann Hoang
     #Alisson Fortis Sanchez
     
     def field_result(self):
@@ -1223,13 +1212,12 @@ class PageFourteen(tk.Frame):
          
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
-    It aslo allow the user to buid their own fun quiz.
-       Args:
+    
+    Args:
        
-       Returns:
+    Returns:
        
-       
-       Side effects:
+    Side effects:
        
     """
     myid=get_user_info()
@@ -1240,7 +1228,7 @@ def main():
     print("\n")
     print("\n")
     personalityquiz=presentquestions_getchoices()
-    #print("Your input are",personalityquiz)
+    #print("Your inputs are",personalityquiz)
     (input_field,input_cube_texture,
             input_cube_color,
             input_ladder_length,input_ladder_dist,
@@ -1284,7 +1272,7 @@ def main():
     print("\n")
     
     
-    user_feedbackinput= int(input("Please enter whether you thougt this test was: (1) accurate, (2) moderately accurate, or (3) not accurate at all"))
+    user_feedbackinput= int(input("Please enter whether you thougt this test was (1) accurate, (2) moderately accurate, or (3) not accurate at all: "))
     user_feedback(user_feedbackinput)
     #write the user response into the database
     record_data("quizdata.csv",myid,input_field,input_cube_texture,
@@ -1299,7 +1287,7 @@ def main():
     app.title("Personality quiz graphic result")
     app.mainloop()
     
-def retry_it():
+def retry_it(): # coded by Ann Hoang
     '''Yes or no option to allow the user to retake the quiz
     
     Args:
@@ -1307,6 +1295,12 @@ def retry_it():
     
     Returns:
         exit (function): no to retaking quiz
+        
+    Raises:
+        ValueError: user does not enter integer in given range
+        
+    Side effects:
+        Runs program again
     '''
     while True:
         try:
