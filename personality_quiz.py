@@ -258,9 +258,6 @@ class Quiz_results:
     
     def field_result(self):
         '''Get user's field choice
-        
-        Args:
-            field (int): field choice
             
         Returns:
             dead_result (str): if user entered 1 for field
@@ -292,9 +289,6 @@ class Quiz_results:
  
     def cube_texture_result (self):
         '''Get user's cube texture choice
-        
-        Args:
-            cube_texture (int): cube texture choice
             
         Returns:
             smooth_result (str): if user entered 1 for cube_texture
@@ -328,9 +322,6 @@ class Quiz_results:
         
     def cube_color_result (self):
         '''Get user's cube color choice
-        
-        Args:
-            cube_color (int): cube color choice
             
         Returns:
             red_result (str): if user entered 1 for cube_color
@@ -382,9 +373,6 @@ class Quiz_results:
         
     def ladder_length_result(self):
         '''Get user's ladder length choice
-        
-        Args:
-            ladder_length (int): ladder length choice
             
         Returns:
             short_result (str): if user entered 1 for ladder_length
@@ -412,9 +400,6 @@ class Quiz_results:
         
     def ladder_distance_result(self):
         '''Get user's ladder distance choice
-        
-        Args:
-            ladder_dist (int): ladder distance choice
             
         Returns:
             near_result (str): if user entered 1 for ladder_dist
@@ -434,9 +419,6 @@ class Quiz_results:
         
     def ladder_cube_result(self):
         '''Get user's ladder distance to cube choice
-        
-        Args:
-            ladder_dist_cube (int): ladder distance to cube choice
             
         Returns:
             near_ladder (str): if user entered 1 for ladder_dist_cube
@@ -456,9 +438,6 @@ class Quiz_results:
 
     def ladder_material_result(self):
         '''Get user's ladder material choice
-        
-        Args:
-            ladder_mat (int): ladder material choice
             
         Returns:
             strong_ladder (str): if user entered 1 for ladder_mat
@@ -480,9 +459,6 @@ class Quiz_results:
 
     def horse_activity_result(self):
         '''Get user's horse activity choice
-        
-        Args:
-            horse_act (int): horse activity choice
             
         Returns:
             playing_result (str): if user entered 1 for horse_act
@@ -517,9 +493,6 @@ class Quiz_results:
         
     def horse_color_result(self):
         '''Get user's horse color choice
-        
-        Args:
-            horse_col (int): horse color choice
             
         Returns:
             brown_horse (str): if user entered 1 for horse_col
@@ -546,9 +519,6 @@ class Quiz_results:
    
     def flower_result(self):
         '''Get user's flowers choice
-        
-        Args:
-            flowers (int): flowers choice
             
         Returns:
             few_results (str): if user entered 1 for flowers
@@ -580,9 +550,6 @@ class Quiz_results:
   
     def weather_result(self):
         '''Get user's weather choice
-        
-        Args:
-            weather (int): weather choice
             
         Returns:
             rain_result (str): if user entered 1 for weather
@@ -623,9 +590,6 @@ class Quiz_results:
            
     def storm_magnitude_result(self):
         '''Get user's storm intensity choice
-        
-        Args:
-            storm_inten (int): storm intensity choice
             
         Returns:
             mild_result (str): if user entered 1 for storm_inten
@@ -658,9 +622,6 @@ class Quiz_results:
         
     def storm_location_result(self):
         '''Get user's storm location choice
-        
-        Args:
-            storm_loc (int): storm location choice
             
         Returns:
             background_result (str): if user entered 1 for storm_loc
