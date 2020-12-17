@@ -24,21 +24,6 @@ def get_user_info():
 
 def presentquestions_getchoices(): # coded by Ann Hoang
     '''Display questions and choices, record answers from user
-    
-    Args:
-        field (int): field choice
-        cube_texture (int): cube texture choice
-        cube_color (int): cube color choice
-        ladder_length (int): ladder length choice
-        ladder_dist (int): ladder distance choice
-        ladder_dist_cube (int): ladder distance to cube choice
-        ladder_mat (int): ladder material choice
-        horse_act (int): horse activity choice
-        horse_col (int): horse color choice
-        flowers (int): flowers choice
-        weather (int): weather choice
-        storm_inten (int): storm intensity choice
-        storm_loc (int): storm location choice
         
     Returns:
         field (int): field choice
@@ -226,7 +211,7 @@ def presentquestions_getchoices(): # coded by Ann Hoang
 
 class Quiz_results:
     '''Class will calculate and display results
-    Args:
+    Attributes:
     * field_result(): 
     * cube_result ():Texture & Color
     * ladder_result(): Length & Distance
@@ -1334,9 +1319,7 @@ class PageFourteen(tk.Frame):
          
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
-    
-    Args:
-       
+
     Returns:
        
     Side effects:
@@ -1411,9 +1394,6 @@ def main():
     
 def retry_it(): # coded by Ann Hoang
     '''Yes or no option to allow the user to retake the quiz
-    
-    Args:
-        re_answer (int): yes or no to retaking quiz
     
     Returns:
         exit (function): no to retaking quiz
