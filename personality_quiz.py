@@ -19,6 +19,7 @@ from PIL import ImageTk, Image
 LARGE_FONT= ("Verdana", 18)
 
 def get_user_info():
+    #driver hung
     user_id=input("Please enter your name: ")
     return user_id
 
@@ -210,9 +211,10 @@ def presentquestions_getchoices(): # coded by Ann Hoang
             weather, storm_inten, storm_loc)
 
 class Quiz_results:
+    #driver Alisson Navigator: Ann
     '''Class will calculate and display results
     Parameters:
-    * field
+    * field(int):an integer input from the user's choice
     * cube_texture
     * cube_color
     * ladder_length
@@ -225,14 +227,7 @@ class Quiz_results:
     * weather
     * storm_inten
     * storm_loc
-    Attributes:
-    * field_result(): 
-    * cube_result ():Texture & Color
-    * ladder_result(): Length & Distance
-    * horse_result(): Activity & Color
-    * flower_result(): Quantity
-    * weather_result():Conditions
-    * storm_result(): Location & Intensity
+    
     Returns:
     * total_summary(): combination result of all factor results from quiz
     Side effects:
@@ -640,6 +635,7 @@ class Quiz_results:
         
 # user_feedback function
 def user_feedback(user_response):
+    #Driver Alisson
     '''Ask the user the quiz’s level of accuracy and display the survey results
     Args:
     user_response:
@@ -662,6 +658,7 @@ def user_feedback(user_response):
         print ("We are sorry your results were not accurate!")
 
 def getfile_len(file_path):
+    #Driver Hung Navigator: Shiqiong
     with open("quizdata.csv","r") as csvfile:
         reader=csv.reader(csvfile)
         reader_len=list(reader)
@@ -671,6 +668,7 @@ def record_data(path,name,field,cube_texture,
             cube_color,ladder_length,ladder_dist,ladder_dist_cube,ladder_mat,
             horse_act,horse_col,flowers,weather, storm_inten,storm_loc,user_feedback):
     #unpack field user input value to string
+    #Driver Shiqiong navigator:hung
     
     fielddict={'field':['dry and dead','grassy and healthy','well-trimmed']}
     if field ==1:
@@ -807,6 +805,7 @@ def record_data(path,name,field,cube_texture,
                           })
         
 def user_datagraph():
+    #Driver Shiqiong Navigator: Alisson Ann Hung
     df=pd.read_csv("quizdata.csv")
     #print(df)
     sns.catplot(y='field',kind='count',palette="ch:.25",data=df)
@@ -881,6 +880,7 @@ def user_datagraph():
     plt.close()
     plt.show()
 class MainGUI(tk.Tk):
+   # Driver: Shiqiong
 
     def __init__(self, *args, **kwargs):
         
@@ -1332,6 +1332,7 @@ class PageFourteen(tk.Frame):
         button2.pack()
          
 def main():
+    #Shiqiong Alisson Ann Hung
     """This function will allow the user to take the personality quiz and display their personality result.
 
     Returns:
@@ -1433,5 +1434,6 @@ def retry_it(): # coded by Ann Hoang
             continue
     
 if __name__=="__main__":
+    #Alisson
     main()
     retry_it()
