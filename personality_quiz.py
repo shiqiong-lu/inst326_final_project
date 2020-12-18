@@ -211,6 +211,20 @@ def presentquestions_getchoices(): # coded by Ann Hoang
 
 class Quiz_results:
     '''Class will calculate and display results
+    Parameters:
+    * field
+    * cube_texture
+    * cube_color
+    * ladder_length
+    * ladder_dist
+    * ladder_dist_cube
+    * ladder_mat
+    * horse_act
+    * horse_col
+    * flowers
+    * weather
+    * storm_inten
+    * storm_loc
     Attributes:
     * field_result(): 
     * cube_result ():Texture & Color
