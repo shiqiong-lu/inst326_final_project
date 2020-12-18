@@ -1238,7 +1238,7 @@ def main():
     print("I also recommend writing your answers down so that it's easier to figure out your results at the end\n")
     print("and harder to waffle about your answers or change them for a result that you prefer!\n")
     print("\n")
-    print("\n")
+   
     personalityquiz=presentquestions_getchoices()
     #print("Your input are",personalityquiz)
     (input_field,input_cube_texture,
@@ -1258,7 +1258,7 @@ def main():
    
     print(f"You choose field, {personalityresult.field_result()}\n")
     print("\n")
-    print("\n")
+    
     print(f"You choose cube texure, {personalityresult.cube_texture_result()}\n")
     print(f"You choose cube color, {personalityresult.cube_color_result()}\n")
     print("\n")
