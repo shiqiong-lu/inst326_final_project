@@ -634,7 +634,7 @@ class Quiz_results:
             return above_result
         
 # user_feedback function
-def user_feedback(user_response):
+def user_feedback(user_feedbackinput):
     '''Ask the user the quiz’s level of accuracy and display the survey results
     Args:
     user_response:
@@ -646,15 +646,15 @@ def user_feedback(user_response):
         Results: accurate, moderately accurate, or not at all.
         '''
     
-
-    if user_response == 1:
-        print ("You agreed your results were very accurate!")
-    
-    if user_response == 2 :
-        print ("You agreed that your results were somewhat, but not completely accurate!")
-
-    if user_response == 3:
-        print ("We are sorry your results were not accurate!")
+while True:
+    try:
+        if user_response == 1:
+            print ("You agreed your results were very accurate!")
+        if user_response == 2 :
+            print ("You agreed that your results were somewhat, but not completely accurate!")
+        if user_response == 3:
+            print ("We are sorry your results were not accurate!")
+   except ValueError:
 
 def getfile_len(file_path):
     with open("quizdata.csv","r") as csvfile:
