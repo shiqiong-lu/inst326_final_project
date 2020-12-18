@@ -22,23 +22,8 @@ def get_user_info():
     user_id=input("Please enter your name: ")
     return user_id
 
-def presentquestions_getchoices():
+def presentquestions_getchoices(): # coded by Ann Hoang
     '''Display questions and choices, record answers from user
-    
-    Args:
-        field (int): field choice
-        cube_texture (int): cube texture choice
-        cube_color (int): cube color choice
-        ladder_length (int): ladder length choice
-        ladder_dist (int): ladder distance choice
-        ladder_dist_cube (int): ladder distance to cube choice
-        ladder_mat (int): ladder material choice
-        horse_act (int): horse activity choice
-        horse_col (int): horse color choice
-        flowers (int): flowers choice
-        weather (int): weather choice
-        storm_inten (int): storm intensity choice
-        storm_loc (int): storm location choice
         
     Returns:
         field (int): field choice
@@ -54,6 +39,13 @@ def presentquestions_getchoices():
         weather (int): weather choice
         storm_inten (int): storm intensity choice
         storm_loc (int): storm location choice
+        
+    Raises:
+        ValueError: user does not enter integer in given range
+        
+    Side effects:
+        Prints quiz questions
+        Prints error messages
     '''
     print("Please enter the corresponding number for each answer choice")
     
@@ -72,7 +64,6 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_texture = int(input('Think of a cube. Is it (1) smooth, (2) rough, or (3) bumpy/spiky? '))
-
             if cube_texture in range(1, 4):
                 break
             else:
@@ -85,10 +76,7 @@ def presentquestions_getchoices():
     while True:
         try:
             cube_color = int(input('Is the cube (1) red, (2) yellow, (3) blue, (4) violet, (5) grey, (6) black, or (7) white? '))
-
             if cube_color in range(1, 8):
-
- 
                 break
             else:
                 print('Please enter an integer from 1-7.')
@@ -100,10 +88,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_length = int(input('Think of a ladder. Is it (1) short or (2) long? '))
-
             if ladder_length in range(1, 3):
-
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -115,9 +100,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist = int(input('Is the ladder (1) near or (2) far? '))
-
             if ladder_dist in range(1, 3):
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -129,9 +112,7 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_dist_cube = int(input('Is the ladder (1) near the cube or (2) far from the cube? '))
-
             if ladder_dist_cube in range(1, 3):
-
                 break
             else:
                 print('Please enter 1 or 2.')
@@ -143,7 +124,6 @@ def presentquestions_getchoices():
     while True:
         try:
             ladder_mat = int(input('Is the ladder made of (1) strong material or (2) weak material? '))
-
             if ladder_mat in range(1, 3):
                 break
             else:
@@ -156,9 +136,7 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_act = int(input('Think of a horse. What is it doing? Is it (1) playing, (2) running, or (3) sleeping/grazing? '))
-
             if horse_act in range(1, 4):
-
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -170,9 +148,7 @@ def presentquestions_getchoices():
     while True:
         try:
             horse_col = int(input('What color is the horse? Is it (1) brown, (2) black, or (3) white? '))
-
             if horse_col in range(1, 4):
-
                 break
             else:
                 print('Please enter an integer from 1-3.')
@@ -180,7 +156,6 @@ def presentquestions_getchoices():
         except ValueError:
             print('Please enter an integer from 1-3.')
             continue
-
     
     while True:
         try:
@@ -236,7 +211,21 @@ def presentquestions_getchoices():
 
 class Quiz_results:
     '''Class will calculate and display results
-    Args:
+    Parameters:
+    * field
+    * cube_texture
+    * cube_color
+    * ladder_length
+    * ladder_dist
+    * ladder_dist_cube
+    * ladder_mat
+    * horse_act
+    * horse_col
+    * flowers
+    * weather
+    * storm_inten
+    * storm_loc
+    Attributes:
     * field_result(): 
     * cube_result ():Texture & Color
     * ladder_result(): Length & Distance
@@ -246,6 +235,8 @@ class Quiz_results:
     * storm_result(): Location & Intensity
     Returns:
     * total_summary(): combination result of all factor results from quiz
+    Side effects:
+    * Prints messages on meaning of choice
     '''
     def __init__(self, field, cube_texture,cube_color,ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
         self.field = field
@@ -262,10 +253,19 @@ class Quiz_results:
         self.storm_inten = storm_inten
         self.storm_loc = storm_loc
 
-    # coded by Ann Hoang
     #Alisson Fortis Sanchez
     
     def field_result(self):
+        '''Get user's field choice
+            
+        Returns:
+            dead_result (str): if user entered 1 for field
+            healthy_result (str): if user entered 2 for field
+            trimmed_result (str): if user entered 3 for field
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         field_representation = "The field represents your mind. Its size is the representation of your knowledge of the world, and how vast your personality is.\n"
 
@@ -287,6 +287,16 @@ class Quiz_results:
             return trimmed_result
  
     def cube_texture_result (self):
+        '''Get user's cube texture choice
+            
+        Returns:
+            smooth_result (str): if user entered 1 for cube_texture
+            rough_result (str): if user entered 2 for cube_texture
+            bump_spike (str): if user entered 3 for cube_texture
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         cube_representation = "The cube represents you. The size of the cube is your ego. The surface of the cube represents what is visibly observable about your personality, or maybe it is what you want others to think about you.\n"
 
@@ -310,6 +320,18 @@ class Quiz_results:
             return bump_spike
         
     def cube_color_result (self):
+        '''Get user's cube color choice
+            
+        Returns:
+            red_result (str): if user entered 1 for cube_color
+            yellow_result (str): if user entered 2 for cube_color
+            blue_result (str): if user entered 3 for cube_color
+            violet_result (str): if user entered 4 for cube_color
+            grey_result (str): if user entered 5 for cube_color
+            black_result (str): if user entered 6 for cube_color
+            white_result (str): if user entered 7 for cube_color
+        '''
+        
         # Color
         red_result = "Red: You are physically active and enjoy rich sensory experiences."
 
@@ -349,6 +371,15 @@ class Quiz_results:
             return white_result
         
     def ladder_length_result(self):
+        '''Get user's ladder length choice
+            
+        Returns:
+            short_result (str): if user entered 1 for ladder_length
+            long_result (str): if user entered 2 for ladder_length
+            
+        Side effects:
+            Prints meaning of choice
+        '''
         
         ladder_representation = "The ladder represents two different aspects of your life—your goals and your friendships. The location and material of your ladder can also tell you how close you are with your friends. \n"
 
@@ -367,6 +398,13 @@ class Quiz_results:
         
         
     def ladder_distance_result(self):
+        '''Get user's ladder distance choice
+            
+        Returns:
+            near_result (str): if user entered 1 for ladder_dist
+            far_result (str): if user entered 2 for ladder_dist
+        '''
+        
          # Distance
         near_result = "Near: You are putting maximum effort and focus into achieving your goals."
         
@@ -379,6 +417,13 @@ class Quiz_results:
             return(far_result)
         
     def ladder_cube_result(self):
+        '''Get user's ladder distance to cube choice
+            
+        Returns:
+            near_ladder (str): if user entered 1 for ladder_dist_cube
+            far_ladder (str): if user entered 2 for ladder_dist_cube
+        '''
+        
          # Ladder Distance
         near_ladder = "Near: If your ladder is near the cube, you are very close with your friends. If it's actually leaning on the cube, it means your friends can lean on you for support."
 
@@ -391,6 +436,13 @@ class Quiz_results:
             return(far_ladder)
 
     def ladder_material_result(self):
+        '''Get user's ladder material choice
+            
+        Returns:
+            strong_ladder (str): if user entered 1 for ladder_mat
+            weak_ladder (str): if user entered 2 for ladder_mat
+        '''
+        
         # Ladder Material
         strong_ladder = "Strong: The stronger the material (e.g. stone, metal, etc.), the stronger the bond with those around you !"
         
@@ -405,6 +457,17 @@ class Quiz_results:
         
 
     def horse_activity_result(self):
+        '''Get user's horse activity choice
+            
+        Returns:
+            playing_result (str): if user entered 1 for horse_act
+            running_result (str): if user entered 2 for horse_act
+            sleep_result (str): if user entered 3 for horse_act      
+  
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         horse_representation = "The horse represents your ideal partner.\n"
 
         print(horse_representation)
@@ -428,6 +491,14 @@ class Quiz_results:
             return(sleep_result)
         
     def horse_color_result(self):
+        '''Get user's horse color choice
+            
+        Returns:
+            brown_horse (str): if user entered 1 for horse_col
+            black_horse (str): if user entered 2 for horse_col
+            white_horse (str): if user entered 3 for horse_col
+        '''
+        
         # Color
         brown_horse = "Brown: You prize comfort and reliability above all else. Otherwise, you don't have a specific set of expectations for your partner."
         
@@ -446,6 +517,16 @@ class Quiz_results:
             return(white_horse)
    
     def flower_result(self):
+        '''Get user's flowers choice
+            
+        Returns:
+            few_results (str): if user entered 1 for flowers
+            everywhere_results (str): if user entered 2 for flowers
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         '''
         Think of flowers.
         Where are the flowers in your field, and how many are there?
@@ -467,6 +548,18 @@ class Quiz_results:
             return everywhere_results
   
     def weather_result(self):
+        '''Get user's weather choice
+            
+        Returns:
+            rain_result (str): if user entered 1 for weather
+            fog_result (str): if user entered 2 for weather
+            wind_result (str): if user entered 3 for weather
+            sun_result (str): if user entered 4 for weather
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         
         weather_representation = "The weather in your field reflects your general outlook on life.\n"
 
@@ -495,6 +588,16 @@ class Quiz_results:
             return sun_result
            
     def storm_magnitude_result(self):
+        '''Get user's storm intensity choice
+            
+        Returns:
+            mild_result (str): if user entered 1 for storm_inten
+            strong_result (str): if user entered 2 for storm_inten
+            
+        Side effects:
+            Prints meaning of choice
+        '''
+        
         
         storm_representation = "The strength and position of the storm reflect the stress you're feeling in life.\n"
 
@@ -517,6 +620,13 @@ class Quiz_results:
 
         
     def storm_location_result(self):
+        '''Get user's storm location choice
+            
+        Returns:
+            background_result (str): if user entered 1 for storm_loc
+            above_result (str): if user entered 2 for storm_loc
+        '''
+        
         # Location
         background_result = "In the Background: Any obstacles that might be causing you grief are not at the forefront of your mind. You are good at managing your anxiety."
         
@@ -1223,13 +1333,10 @@ class PageFourteen(tk.Frame):
          
 def main():
     """This function will allow the user to take the personality quiz and display their personality result.
-    It aslo allow the user to buid their own fun quiz.
-       Args:
+
+    Returns:
        
-       Returns:
-       
-       
-       Side effects:
+    Side effects:
        
     """
     myid=get_user_info()
@@ -1240,7 +1347,7 @@ def main():
     print("\n")
    
     personalityquiz=presentquestions_getchoices()
-    #print("Your input are",personalityquiz)
+    #print("Your inputs are ",personalityquiz)
     (input_field,input_cube_texture,
             input_cube_color,
             input_ladder_length,input_ladder_dist,
@@ -1284,7 +1391,7 @@ def main():
     print("\n")
     
     
-    user_feedbackinput= int(input("Please enter whether you thougt this test was: (1) accurate, (2) moderately accurate, or (3) not accurate at all"))
+    user_feedbackinput= int(input("Please enter whether you thougt this test was (1) accurate, (2) moderately accurate, or (3) not accurate at all: "))
     user_feedback(user_feedbackinput)
     #write the user response into the database
     record_data("quizdata.csv",myid,input_field,input_cube_texture,
@@ -1299,14 +1406,17 @@ def main():
     app.title("Personality quiz graphic result")
     app.mainloop()
     
-def retry_it():
+def retry_it(): # coded by Ann Hoang
     '''Yes or no option to allow the user to retake the quiz
-    
-    Args:
-        re_answer (int): yes or no to retaking quiz
     
     Returns:
         exit (function): no to retaking quiz
+        
+    Raises:
+        ValueError: user does not enter integer in given range
+        
+    Side effects:
+        Runs program again
     '''
     while True:
         try:
