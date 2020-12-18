@@ -6,7 +6,7 @@
 #Hung Nguyen
 # The code for changing pages was derived from: http://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
 # License: http://creativecommons.org/licenses/by-sa/3.0/	
-#Shiqiong Lu added codes for INST 326 Project GUI
+# Shiqiong Lu added codes for INST 326 Project GUI
 
 import csv
 import pandas as pd 
@@ -211,7 +211,8 @@ def presentquestions_getchoices(): # coded by Ann Hoang
             weather, storm_inten, storm_loc)
 
 class Quiz_results:
-    #driver Alisson Navigator: Ann
+    # Driver: Alisson 
+    # Navigator: Ann
     '''Class will calculate and display results
     Parameters:
     * field (int)
@@ -236,6 +237,7 @@ class Quiz_results:
     * Prints messages on meaning of choice
     '''
     def __init__(self, field, cube_texture,cube_color,ladder_length, ladder_dist, ladder_dist_cube, ladder_mat, horse_act, horse_col, flowers, weather, storm_inten, storm_loc):
+        '''Inititalize variables '''
         self.field = field
         self.cube_texture  = cube_texture
         self.cube_color = cube_color
@@ -249,8 +251,6 @@ class Quiz_results:
         self.weather = weather
         self.storm_inten = storm_inten
         self.storm_loc = storm_loc
-
-    #Alisson Fortis Sanchez
     
     def field_result(self):
         '''Get user's field choice
@@ -639,7 +639,7 @@ class Quiz_results:
 def user_feedback(user_feedbackinput):
     '''Ask the user the quiz’s level of accuracy and display the survey results
     Args:
-    user_response:
+    user_feedbackinput:
         - (1) for accurate results
         - (2) for moderately accurate results
         - (3) for not accurate at all
@@ -650,13 +650,15 @@ def user_feedback(user_feedbackinput):
     
 while True:
     try:
-        if user_response == 1:
+        if user_feedbackinput == 1:
             print ("You agreed your results were very accurate!")
-        if user_response == 2 :
+        if user_feedbackinput == 2 :
             print ("You agreed that your results were somewhat, but not completely accurate!")
-        if user_response == 3:
+        if user_feedbackinput == 3:
             print ("We are sorry your results were not accurate!")
-   except ValueError:
+    except (ValueError):
+        print (" The value you have entered is out of range. Please try again!)
+ 
 
 def getfile_len(file_path):
     #Driver Hung Navigator: Shiqiong
@@ -1333,7 +1335,8 @@ class PageFourteen(tk.Frame):
         button2.pack()
          
 def main():
-    #Shiqiong Alisson Ann Hung
+    # Dirver: Shiqiong 
+    # Ann & Alisson & Hung
     """This function will allow the user to take the personality quiz and display their personality result.
 
     Returns:
@@ -1435,6 +1438,6 @@ def retry_it(): # coded by Ann Hoang
             continue
     
 if __name__=="__main__":
-    #Alisson
+    # Driver: Alisson
     main()
     retry_it()
