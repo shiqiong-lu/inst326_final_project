@@ -20,6 +20,10 @@ LARGE_FONT= ("Verdana", 18)
 
 def get_user_info():
     #driver hung
+    """ Users to enter their name. 
+        Return:
+            The user will return to the home page.
+    """
     user_id=input("Please enter your name: ")
     return user_id
 
@@ -662,6 +666,10 @@ while True:
 
 def getfile_len(file_path):
     #Driver Hung Navigator: Shiqiong
+     """Read the file for personality quiz.
+    Return:
+        Return the reader to home page.   
+    """
     with open("quizdata.csv","r") as csvfile:
         reader=csv.reader(csvfile)
         reader_len=list(reader)
@@ -672,6 +680,25 @@ def record_data(path,name,field,cube_texture,
             horse_act,horse_col,flowers,weather, storm_inten,storm_loc,user_feedback):
     #unpack field user input value to string
     #Driver Shiqiong navigator:hung
+    """This record the variables of your input. 
+    Args:
+        fielddict (int): what kind of field you want.
+        cube_texturedict (int): the cube features.
+        cube_colordict (int): what kind of color for the cube.
+        ladder_lengthdict (int): the length of the ladder.
+        ladder_distdict (int): ladder distance. 
+        ladder_dist_cubedict (int): ladder distance to the cube.
+        ladder_matdict (int): the ladder material. 
+        horse_actdict (int): what the horse is doing. 
+        horse_coldict (int): color of the horse.
+        flowersdict (int): how many flowers outside. 
+        weatherdict (int): what the weather outside. 
+        storm_intendict (int): the storm strength outside. 
+        storm_locdict (int): the storm location. 
+        user_feedbackdict (int): the users feedback of these questions. 
+    Return:
+        fieldnames(int): result of input of these variables.
+    """
     
     fielddict={'field':['dry and dead','grassy and healthy','well-trimmed']}
     if field ==1:
@@ -809,6 +836,10 @@ def record_data(path,name,field,cube_texture,
         
 def user_datagraph():
     #Driver Shiqiong Navigator: Alisson Ann Hung
+    """What kind of paragraph for the result of the personality quiz.
+    Return:
+        The result of your choose for your paragraph.
+    """
     df=pd.read_csv("quizdata.csv")
     #print(df)
     sns.catplot(y='field',kind='count',palette="ch:.25",data=df)
@@ -1338,11 +1369,11 @@ def main():
     # Dirver: Shiqiong 
     # Ann & Alisson & Hung
     """This function will allow the user to take the personality quiz and display their personality result.
-
     Returns:
+       Print the outcome of your result for finishing the quiz. 
        
     Side effects:
-       
+       Print what your presonality is.
     """
     myid=get_user_info()
     print("Welcome to the Remeo Antolin Cube Personality Test\n")
