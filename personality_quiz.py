@@ -211,6 +211,7 @@ def presentquestions_getchoices(): # coded by Ann Hoang
             weather, storm_inten, storm_loc)
 
 class Quiz_results:
+    
     #driver Alisson Navigator: Ann
     '''Class will calculate and display results
     Parameters:
@@ -636,7 +637,7 @@ class Quiz_results:
             return above_result
         
 # user_feedback function
-def user_feedback(user_feedbackinput):
+def user_feedback(user_response):
     '''Ask the user the quiz’s level of accuracy and display the survey results
     Args:
     user_response:
@@ -648,15 +649,20 @@ def user_feedback(user_feedbackinput):
         Results: accurate, moderately accurate, or not at all.
         '''
     
-while True:
-    try:
-        if user_response == 1:
-            print ("You agreed your results were very accurate!")
-        if user_response == 2 :
-            print ("You agreed that your results were somewhat, but not completely accurate!")
-        if user_response == 3:
-            print ("We are sorry your results were not accurate!")
-   except ValueError:
+    while True:
+        try:
+            if user_response == 1:
+                print ("You agreed your results were very accurate!")
+                break
+            elif user_response == 2 :
+                print ("You agreed that your results were somewhat, but not completely accurate!")
+                break
+            else:
+                print ("We are sorry your results were not accurate!")
+            break
+        except ValueError:
+            print("Please enter a valid number")
+            continue
 
 def getfile_len(file_path):
     #Driver Hung Navigator: Shiqiong
