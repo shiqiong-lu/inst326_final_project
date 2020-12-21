@@ -1139,8 +1139,9 @@ def main():
     #make the bar graphs to show in the GUI with user's choice
     user_datagraph()
     
-    #The fame of this GUI is coming from https://www.youtube.com/watch?v=D8-snVfekto video,
-    #Shiqiong Lu coded with this app GUI other features
+    #The basic structure of this GUI is coming from https://www.youtube.com/watch?v=D8-snVfekto video tutorial,
+    #Shiqiong Lu coded this GUI other features such as allow a graph change size and remove from the GUI with 
+    #different user input request
     HEIGHT=800
     WIDTH=800
     
