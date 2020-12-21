@@ -1,30 +1,69 @@
 ﻿id,name,field,cube texture,cube color,ladder length,ladder distance,ladder cube distance,ladder material,horse action,horse color,flowers,weather,storm magnitude,storm location,user feedback
 1,Joanna,dry and dead,smooth,red,short,near,near the cube,strong material,playing,black,Just a few,rain,mild,in the background ,accurate results
-3,Alisa,grassy and healthy,rough,yellow,long,far,far from the cube,weak material,running,white,They are everywhere,fog,strong,right above the cube,moderately accurate results
-5,Monica,well-trimmed,bumpy/spiky,blue,long,far,far from the cube,weak material,running,white,They are everywhere,wind,strong,right above the cube,not accurate at all
+2,Alisa,grassy and healthy,rough,yellow,long,far,far from the cube,weak material,running,white,They are everywhere,fog,strong,right above the cube,moderately accurate results
+3,Monica,well-trimmed,bumpy/spiky,blue,long,far,far from the cube,weak material,running,white,They are everywhere,wind,strong,right above the cube,not accurate at all
 4,Alisson,dry and dead,smooth,violet,short,near,near the cube,strong material,playing,black,Just a few,sun,mild,in the background ,accurate results
 5,Zac,grassy and healthy,rough,grey,long,far,far from the cube,weak material,running,white,They are everywhere,fog,strong,in the background ,moderately accurate results
 6,Flora,well-trimmed,bumpy/spiky,black,long,far,far from the cube,weak material,running,white,They are everywhere,fog,strong,right above the cube,moderately accurate results
-8,Nina,dry and dead,smooth,white,short,far,near the cube,weak material,playing,black,They are everywhere,sun,strong,right above the cube,not accurate at all
-10,Chris,well-trimmed,bumpy/spiky,white,long,near,far from the cube,weak material,running,white,They are everywhere,wind,mild,right above the cube,accurate results
-12,Kate,grassy and healthy,bumpy/spiky,white,short,far,far from the cube,strong material,playing,white,Just a few,rain,mild,in the background ,accurate results
+7,Nina,dry and dead,smooth,white,short,far,near the cube,weak material,playing,black,They are everywhere,sun,strong,right above the cube,not accurate at all
+8,Chris,well-trimmed,bumpy/spiky,white,long,near,far from the cube,weak material,running,white,They are everywhere,wind,mild,right above the cube,accurate results
+9,Kate,grassy and healthy,bumpy/spiky,white,short,far,far from the cube,strong material,playing,white,Just a few,rain,mild,in the background ,accurate results
 10,Linda,grassy and healthy,smooth,yellow,long,near,far from the cube,weak material,running,brown,Just a few,fog,strong,right above the cube,accurate results
-12,Blair,well-trimmed,bumpy/spiky,black,long,near,far from the cube,weak material,running,brown,They are everywhere,wind,mild,right above the cube,moderately accurate results
-14,Bob,grassy and healthy,bumpy/spiky,violet,short,near,far from the cube,weak material,playing,white,Just a few,fog,strong,right above the cube,moderately accurate results
-16,Julie,dry and dead,bumpy/spiky,yellow,long,near,far from the cube,strong material,playing,brown,They are everywhere,rain,strong,right above the cube,not accurate at all
-18,Vivian,well-trimmed,bumpy/spiky,blue,short,far,far from the cube,weak material,running,black,Just a few,wind,mild,right above the cube,accurate results
-20,Jenny,dry and dead,rough,blue,long,near,far from the cube,strong material,running,brown,Just a few,wind,mild,right above the cube,accurate results
-22,Hung,well-trimmed,smooth,black,long,near,far from the cube,weak material,playing,brown,They are everywhere,fog,mild,right above the cube,moderately accurate results
-24,Cathy,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
-26,George,grassy and healthy,rough,yellow,long,far,far from the cube,weak material,running,black,They are everywhere,fog,strong,right above the cube,moderately accurate results
-28,Lucas,grassy and healthy,smooth,blue,short,near,near the cube,strong material,running,white,Just a few,sun,strong,in the background ,accurate results
-30,Selina,dry and dead,smooth,red,short,near,far from the cube,weak material,sleeping/grazing,black,They are everywhere,wind,mild,in the background ,moderately accurate results
-38,Maria,dry and dead,bumpy/spiky,white,long,near,far from the cube,weak material,playing,black,They are everywhere,wind,strong,in the background ,accurate results
-40,Maria,dry and dead,rough,white,long,near,far from the cube,weak material,sleeping/grazing,white,They are everywhere,rain,strong,right above the cube,accurate results
-42,Abby,grassy and healthy,smooth,grey,long,near,far from the cube,strong material,running,black,Just a few,wind,mild,right above the cube,accurate results
-44,Lina,well-trimmed,bumpy/spiky,black,long,near,near the cube,strong material,running,white,Just a few,fog,mild,right above the cube,moderately accurate results
-46,Gina,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,moderately accurate results
-48,Kate,well-trimmed,smooth,blue,short,far,far from the cube,strong material,playing,black,They are everywhere,wind,strong,in the background ,accurate results
-27,Bella,dry and dead,smooth,yellow,long,near,far from the cube,strong material,sleeping/grazing,white,Just a few,fog,strong,in the background ,moderately accurate results
-29,Galina,well-trimmed,rough,red,long,near,far from the cube,strong material,running,white,They are everywhere,wind,mild,right above the cube,moderately accurate results
-31,Lilly,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,strong,in the background ,accurate results
+11,Blair,well-trimmed,bumpy/spiky,black,long,near,far from the cube,weak material,running,brown,They are everywhere,wind,mild,right above the cube,moderately accurate results
+12,Bob,grassy and healthy,bumpy/spiky,violet,short,near,far from the cube,weak material,playing,white,Just a few,fog,strong,right above the cube,moderately accurate results
+13,Julie,dry and dead,bumpy/spiky,yellow,long,near,far from the cube,strong material,playing,brown,They are everywhere,rain,strong,right above the cube,not accurate at all
+14,Vivian,well-trimmed,bumpy/spiky,blue,short,far,far from the cube,weak material,running,black,Just a few,wind,mild,right above the cube,accurate results
+15,Jenny,dry and dead,rough,blue,long,near,far from the cube,strong material,running,brown,Just a few,wind,mild,right above the cube,accurate results
+16,Hung,well-trimmed,smooth,black,long,near,far from the cube,weak material,playing,brown,They are everywhere,fog,mild,right above the cube,moderately accurate results
+17,Cathy,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+18,George,grassy and healthy,rough,yellow,long,far,far from the cube,weak material,running,black,They are everywhere,fog,strong,right above the cube,moderately accurate results
+19,Lucas,grassy and healthy,smooth,blue,short,near,near the cube,strong material,running,white,Just a few,sun,strong,in the background ,accurate results
+20,Selina,dry and dead,smooth,red,short,near,far from the cube,weak material,sleeping/grazing,black,They are everywhere,wind,mild,in the background ,moderately accurate results
+21,Maria,dry and dead,bumpy/spiky,white,long,near,far from the cube,weak material,playing,black,They are everywhere,wind,strong,in the background ,accurate results
+22,Maria,dry and dead,rough,white,long,near,far from the cube,weak material,sleeping/grazing,white,They are everywhere,rain,strong,right above the cube,accurate results
+23,Abby,grassy and healthy,smooth,grey,long,near,far from the cube,strong material,running,black,Just a few,wind,mild,right above the cube,accurate results
+24,Lina,well-trimmed,bumpy/spiky,black,long,near,near the cube,strong material,running,white,Just a few,fog,mild,right above the cube,moderately accurate results
+25,Gina,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,moderately accurate results
+26,Kate,well-trimmed,smooth,blue,short,far,far from the cube,strong material,playing,black,They are everywhere,wind,strong,in the background ,accurate results
+27,Bella,dry and dead,smooth,yellow,long,near,far from the cube,strong material,sleeping/grazing,white,Just a few,fog,strong,in the background ,moderately accurate results
+28,Galina,well-trimmed,rough,red,long,near,far from the cube,strong material,running,white,They are everywhere,wind,mild,right above the cube,moderately accurate results
+29,Lilly,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,strong,in the background ,accurate results
+30,lil,well-trimmed,bumpy/spiky,grey,long,near,far from the cube,weak material,playing,brown,They are everywhere,rain,strong,right above the cube,moderately accurate results
+31,lu123,dry and dead,rough,white,long,near,far from the cube,strong material,running,white,Just a few,rain,mild,in the background ,accurate results
+32,tracy,well-trimmed,smooth,yellow,short,far,near the cube,weak material,playing,black,Just a few,rain,strong,right above the cube,accurate results
+33,Shirely,dry and dead,smooth,yellow,short,far,near the cube,weak material,playing,black,Just a few,fog,mild,right above the cube,moderately accurate results
+35,Nina,dry and dead,rough,red,short,far,near the cube,weak material,playing,black,Just a few,fog,mild,right above the cube,accurate results
+37,Zackary,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+39,,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+40,hi,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+41,Jolin,dry and dead,smooth,red,long,near,far from the cube,weak material,playing,black,Just a few,wind,strong,in the background ,accurate results
+42,Linda,grassy and healthy,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+40,Helen,dry and dead,rough,white,short,far,near the cube,weak material,playing,black,Just a few,rain,mild,in the background ,accurate results
+42,Lisa,grassy and healthy,rough,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+44,Mina,dry and dead,rough,white,short,far,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+46,xin,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+48,Bob,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+50,Yuan,grassy and healthy,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+52,Yina,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+54,o,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+56,q,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+58,apple,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+60,gi,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+62,ii,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+64,oo,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+66,1,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+68,f,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+70,2,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+72,re,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+74,re,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+76,rere,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+78,gee,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+80,tit,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+82,hihi,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+84,h,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+86,gigi,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+88,lily,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+90,1,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+92,1,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+94,feye,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
+96,jij,dry and dead,smooth,red,short,near,near the cube,strong material,playing,brown,Just a few,rain,mild,in the background ,accurate results
