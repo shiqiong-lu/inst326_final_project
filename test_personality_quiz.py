@@ -10,9 +10,9 @@ import pytest
 def test_addquiz_happyz_path():
     """This function will test some happy of the sript personality_quiz.py
     """
-    assert pq.presentquestions_getchoices()==1
-    assert pq.presentquestions_getchoices()==2
-    assert pq.presentquestions_getchoices()==3
+    assert pq.presentquestions_getchoices()==(1,1,1,1,1,1,1,1,1,1,1,1,1)
+    assert pq.presentquestions_getchoices()==(1,2,2,2,1,2,1,2,2,2,1,2,1)
+    assert pq.presentquestions_getchoices()==(3,2,2,2,1,2,1,2,2,2,1,2,1)
     
     assert pq.user_feedback(1)==1
     assert pq.user_feedback(2)==2
@@ -28,9 +28,9 @@ def test_addquiz_edge_path():
     """This function will test some edges cased of the script personality_quiz.py
     """
     #test time invalid entry like characters balck space and punctions
-    assert pq.presentquestions_getchoices()=='q'
-    assert pq.presentquestions_getchoices()==" "
-    assert pq.presentquestions_getchoices()=="."
+    assert pq.presentquestions_getchoices()==('q',2,2,2,1,2,1,2,2,2,1,2,1)
+    assert pq.presentquestions_getchoices()==('.',2,2,2,1,2,1,2,2,2,1,2,1)
+    assert pq.presentquestions_getchoices()==(' ',2,2,2,1,2,1,2,2,2,1,2,1)
  
     
     assert pq.user_feedback(1)=='yes'
