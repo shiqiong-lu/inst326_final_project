@@ -13,8 +13,11 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 from PIL import ImageTk, Image
 
+"""This script will display a personality quiz to the user, asking user input, decided the user quiz result,
+display the quiz result to the user, write each user input into a csv file to make bar graphs of all responder's result,
+displaying a GUI to allow the user to check each input with the bar graph, allow the user to retake the quiz or exit the script.
 
-LARGE_FONT= ("Verdana", 18)
+"""
 
 def get_user_info():
     #driver hung
